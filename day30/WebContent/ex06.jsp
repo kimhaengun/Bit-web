@@ -37,6 +37,12 @@
 		 %>
 	</p>
 	<p>select:<%=request.getParameter("sel") %></p>
+	<p><%
+		en = request.getHeaderNames();
+		while(en.hasMoreElements()){
+			System.out.println(en.nextElement());
+		}
+		%></p>
 	
 </body>
 </html>
