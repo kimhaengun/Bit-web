@@ -130,7 +130,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
 
-      <Context docBase="E:\webspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="E:\webspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\day30" path="/day30" reloadable="true" source="org.eclipse.jst.jee.server:day30"/><Context docBase="E:\webspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\day31a" path="/day31a" reloadable="true" source="org.eclipse.jst.jee.server:day31a"/></Host>
+      <Context docBase="E:\webspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="E:\webspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\day30" path="/day30" reloadable="true" source="org.eclipse.jst.jee.server:day30"/><Context docBase="E:\webspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\day31a" path="/day31a" reloadable="true" source="org.eclipse.jst.jee.server:day31a"/><Context docBase="E:\webspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\day31p" path="/day31p" reloadable="true" source="org.eclipse.jst.jee.server:day31p"/></Host>
     </Engine>
   </Service>
 </Server>

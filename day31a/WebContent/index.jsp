@@ -12,7 +12,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body >
+	<div align="center">
 	<h1 align="center">EMP List</h1>
 	<table width="600" border="1" align="center">
 		<tr>
@@ -38,7 +39,7 @@
 			%>
 		<tr>
 			<td><%= rs.getString(1)%></td>
-			<td><%= rs.getString(2)%></td>
+			<td><a href="detail.jsp?empno=<%= rs.getString(1)%>"><%= rs.getString(2)%></a></td>
 			<td><%= rs.getString(3)%></td>
 			<td><%= rs.getString(4)%></td>						
 		</tr>
@@ -50,5 +51,7 @@
 		}
 		%>
 	</table>
+	<p><a href="add.jsp">입력</a></p>
+	</div>
 </body>
 </html>
