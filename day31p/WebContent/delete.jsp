@@ -4,15 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="refresh" content="0; url=detail.jsp?num=<%=request.getParameter("num")%>">
+<meta http-equiv="refresh" content="0; url=list.jsp">
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ page import="java.sql.*,java.util.*" %>
+		<%@ page import="java.sql.*,java.util.*" %>
 	<%
-		String sql = "update bbs01 set sub = '"
-					 +request.getParameter("sub")+
-					 "',content='"+request.getParameter("content")+"', nalja=now() where num = "+request.getParameter("num");
+		String sql = "delete from bbs01 where num="+request.getParameter("num");
 		System.out.println(sql);
 		String driver = "com.mysql.jdbc.Driver";
 		String url = "jdbc:mysql://localhost:3306/lecture";
