@@ -33,6 +33,7 @@
 					</tr>
 					<%@ page import="java.sql.*,java.util.*" %>
 					<%
+						int maxCount = 0;
 						String msgP = request.getParameter("page");
 						int p = 1;
 						if(msgP!=null){
@@ -40,7 +41,8 @@
 						}
 						
 						// String sql = "select num,sub,id,nalja from bbs01 where num>=(select max(num)-10 from bbs01)-10*"+p+"and num<=(select max(num) from bbs01)-10*"+p+" order by num desc";
-						String sql = "select num,sub,id,nalja from (select num,sub,id,nalja, @rownum:=@rownum+1 as rn from bbs01 , (select @rownum:=0 from dual)R order by num desc)R2 where rn>=1+10*"+(p-1)+" and rn<=10+10*"+(p-1)+";";
+						//String sql = "select num,sub,id,nalja from (select num,sub,id,nalja, @rownum:=@rownum+1 as rn from bbs01 , (select @rownum:=0 from dual)R order by num desc)R2 where rn>=1+10*"+(p-1)+" and rn<=10+10*"+(p-1)+";";
+						String sql = "select num,sub,id,nalja from bbs01 order by num desc limit 10 offset "+(10*(p-1));
 						Map<String, String> env = System.getenv();
 						String driver = "com.mysql.jdbc.Driver";
 						String url = "jdbc:mysql://localhost:3306/lecture";
@@ -54,6 +56,13 @@
 						try{
 							Class.forName(driver);
 							conn = DriverManager.getConnection(url, user, password);
+							stmt = conn.createStatement();
+							rs = stmt.executeQuery("select CEILING(count(*)/10) from bbs01;");
+							if(rs.next()){
+								maxCount = rs.getInt(1);
+								rs.close();
+								stmt.close();
+							}
 							stmt = conn.createStatement();
 							rs = stmt.executeQuery(sql);
 							while(rs.next()){
@@ -72,6 +81,31 @@
 							if(conn!=null)conn.close();
 						}
 					%>
+					<tr align="center" >
+						<td colspan="4">
+							<%
+								int start= 0+5*((p-1)/5);
+								int end = start+5;
+								if(end>maxCount){
+									end = maxCount;
+								}
+								if(start!=0){
+							%>
+								<a href="list.jsp?page=<%=start-1 %>"><-</a>
+							<%
+								}
+								for(int i =start; i< end; i++){
+							%>
+								<a href="list.jsp?page=<%=i+1 %>"><%=i+1 %></a>
+							<%
+								}
+								if(end<maxCount){
+									
+							%>
+							<a href="list.jsp?page=<%=end+1 %>">-></a>
+							<%} %>
+						</td>
+					</tr>
 				</table>
 				<!-- 내용끝 -->
 			</td>
