@@ -25,13 +25,14 @@
 			MongoCollection<Document> coll = db.getCollection("bbs01");
 			//쿼리 실행
 			Document doc = new Document();
+			//sort의 기준 / 1 = 순서대로, -1 = 역순
 			doc.append("_id", -1);
 			FindIterable<Document> rs = coll.find().sort(doc).skip(0).limit(5);
 			MongoCursor<Document> ite = rs.iterator();
 			while(ite.hasNext()){
 				doc = ite.next();
 		%>
-			<dt><%=doc.get("sub") %></dt>
+			<dt><a href="detail.jsp?id=<%=doc.get("_id")%>"><%=doc.get("sub") %></a></dt>
 			<dd><%=doc.get("content")%></dd>
 		<%
 			}
