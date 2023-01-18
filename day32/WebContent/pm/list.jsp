@@ -23,7 +23,8 @@
 		<tr>
 			<td>
 				<!-- 내용작성 --> 
-				<h1>페이징된 게시판</h1>
+				<h1 align="center">페이징된 게시판</h1>
+				
 				<table border="1" cellspacing="0" align="center" width="600">
 					<tr>
 						<th>글번호</th>
@@ -33,6 +34,12 @@
 					</tr>
 					<%@ page import="java.sql.*,java.util.*" %>
 					<%
+						int limit = 10;
+						String msgLimit = request.getParameter("limit");
+						if(msgLimit!=null){
+							limit=Integer.parseInt(msgLimit);
+						}
+						
 						String key = request.getParameter("key");
 						if(key==null){
 							key="sub";
@@ -51,7 +58,7 @@
 						
 						// String sql = "select num,sub,id,nalja from bbs01 where num>=(select max(num)-10 from bbs01)-10*"+p+"and num<=(select max(num) from bbs01)-10*"+p+" order by num desc";
 						//String sql = "select num,sub,id,nalja from (select num,sub,id,nalja, @rownum:=@rownum+1 as rn from bbs01 , (select @rownum:=0 from dual)R order by num desc)R2 where rn>=1+10*"+(p-1)+" and rn<=10+10*"+(p-1)+";";
-						String sql = "select num,sub,id,nalja from bbs01 where "+key+" like '%"+word+"%' order by num desc limit 10 offset "+(10*(p-1));
+						String sql = "select num,sub,id,nalja from bbs01 where "+key+" like '%"+word+"%' order by num desc limit "+limit+" offset "+(limit*(p-1));
 						Map<String, String> env = System.getenv();
 						String driver = "com.mysql.jdbc.Driver";
 						String url = "jdbc:mysql://localhost:3306/lecture";
@@ -66,7 +73,7 @@
 							Class.forName(driver);
 							conn = DriverManager.getConnection(url, user, password);
 							stmt = conn.createStatement();
-							rs = stmt.executeQuery("select CEILING(count(*)/10) from bbs01 where "+key+" like '%"+word+"%'");
+							rs = stmt.executeQuery("select CEILING(count(*)/"+limit+") from bbs01 where "+key+" like '%"+word+"%'");
 							if(rs.next()){
 								maxCount = rs.getInt(1);
 								rs.close();
@@ -90,6 +97,7 @@
 							if(conn!=null)conn.close();
 						}
 					%>
+					
 					<tr align="center" >
 						<td colspan="4">
 							<form>
@@ -109,19 +117,25 @@
 								}
 								if(start!=0){
 							%>
-								<a href="list.jsp?page=<%=start-1 %>&key=<%=key %>&word=<%=word %>"><-</a>
+								<a href="list.jsp?limit=<%=limit %>&page=<%=start-1 %>&key=<%=key %>&word=<%=word %>"><-</a>
 							<%
 								}
 								for(int i =start; i< end; i++){
 							%>
-								<a href="list.jsp?page=<%=i+1 %>&key=<%=key %>&word=<%=word %>"><%=i+1 %></a>
+								<a href="list.jsp?limit=<%=limit %>&page=<%=i+1 %>&key=<%=key %>&word=<%=word %>"><%=i+1 %></a>
 							<%
 								}
 								if(end<maxCount){
 									
 							%>
-							<a href="list.jsp?page=<%=end+1 %>&key=<%=key %>&word=<%=word %>">-></a>
+							<a href="list.jsp?limit=<%=limit %>&page=<%=end+1 %>&key=<%=key %>&word=<%=word %>">-></a>
 							<%} %>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4" align="right">
+						 <a href="list.jsp?limit=5&page=<%=p %>&key=<%=key %>&word=<%=word %>">5개</a>
+						 <a href="list.jsp?limit=10&page=<%=p %>&key=<%=key %>&word=<%=word %>">10개</a>
 						</td>
 					</tr>
 				</table>
