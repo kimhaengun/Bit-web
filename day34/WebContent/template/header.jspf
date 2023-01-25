@@ -1,0 +1,9 @@
+<%@ page 
+    pageEncoding="UTF-8"%>
+	<table width="100%">
+		<tr>
+			<td align="center">
+				<img src="/day34/imgs/logo.png"><h1>학생성적관리프로그램(web)</h1>	
+			</td>
+		</tr>
+		

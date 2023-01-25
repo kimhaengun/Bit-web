@@ -1,0 +1,14 @@
+<%@ page 
+    pageEncoding="UTF-8"%>
+		<tr>
+			<td bgcolor="gray" align="center">
+				<p>
+				<a href="../" style="">home</a>
+				<a href="../stu/list.jsp" style="">list</a>
+				<a href="../stu/add.jsp" style="">insert</a>
+				<a href="#" style="">etc</a>
+				</p>				
+			</td>
+		</tr>
+		<tr>
+			<td align="center">

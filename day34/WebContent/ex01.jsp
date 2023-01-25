@@ -9,7 +9,10 @@
 <body>
 	<h1>ex01 page</h1>
 	<p>다음은 ex01 page의 내용입니다</p>
-	<%@ include file="ex02.jsp" %>
-	<p>여기도 ex01 page의 내용입니다</p>
+	<%
+		int before=1111;
+	%>
+	<%@ include file="ex02.jspf" %>
+	<p>여기도 ex01 page의 내용입니다<%=before %></p>
 </body>
 </html>

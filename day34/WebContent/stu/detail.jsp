@@ -8,24 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table width="100%">
-		<tr>
-			<td align="center">
-				<h1>학생성적관리프로그램(web)</h1>	
-			</td>
-		</tr>
-		<tr>
-			<td bgcolor="gray" align="center">
-				<p>
-				<a href="../" style="">home</a>
-				<a href="./list.jsp" style="">list</a>
-				<a href="./add.jsp" style="">insert</a>
-				<a href="#" style="">etc</a>
-				</p>				
-			</td>
-		</tr>
-		<tr>
-			<td align="center">
+			
+			<%@ include file="../template/header.jspf" %>
+			<%@ include file="../template/menu2.jspf" %>
 			<%@page import="java.sql.*,com.bit.stu.LocalMysql" %>
 			<%
 				int num = Integer.parseInt(request.getParameter("num"));
@@ -78,14 +63,14 @@
 						<td>합계</td>
 						<td><%=tot %></td>
 					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<a href="edit.jsp?num=<%=num%>">수정</a>
+							<a href="delete.jsp?num=<%=num%>">삭제</a>
+						</td>
+						
+					</tr>
 				</table>
-			</td>
-		</tr>
-		<tr>
-			<td bgcolor="gray" align="center">
-				&copy; dqwkdjwqldhwqkdhwqiyghqygdwqhbdwq
-			</td>
-		</tr>
-	</table>
+	<%@ include file="../template/footer.jspf" %>
 </body>
 </html>

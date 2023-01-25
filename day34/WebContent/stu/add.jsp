@@ -7,24 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table width="100%">
-		<tr>
-			<td align="center">
-				<h1>학생성적관리프로그램(web)</h1>	
-			</td>
-		</tr>
-		<tr>
-			<td bgcolor="gray" align="center">
-				<p>
-				<a href="../" style="">home</a>
-				<a href="./list.jsp" style="">list</a>
-				<a href="./add.jsp" style="">insert</a>
-				<a href="#" style="">etc</a>
-				</p>				
-			</td>
-		</tr>
-		<tr>
-			<td align="center">
+			<%@ include file="../template/header.jspf" %>
+			<%@ include file="../template/menu2.jspf" %>
 				<h2>학생 성적 입력</h2>
 				<form action="insert.jsp">
 				<table width="600" align="center">
@@ -48,13 +32,6 @@
 					</tr>
 				</table>
 				</form>
-			</td>
-		</tr>
-		<tr>
-			<td bgcolor="gray" align="center">
-				&copy; dqwkdjwqldhwqkdhwqiyghqygdwqhbdwq
-			</td>
-		</tr>
-	</table>
+	<%@ include file="../template/footer.jspf" %>
 </body>
 </html>

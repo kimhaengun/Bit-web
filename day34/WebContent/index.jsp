@@ -7,36 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table width="100%">
-		<tr>
-			<td align="center">
-				<h1>학생성적관리프로그램(web)</h1>	
-			</td>
-		</tr>
-		<tr>
-			<td bgcolor="gray" align="center">
-				<p>
-				<a href="./" style="">home</a>
-				<a href="./stu/list.jsp" style="">list</a>
-				<a href="./stu/add.jsp" style="">insert</a>
-				<a href="#" style="">etc</a>
-				</p>				
-			</td>
-		</tr>
-		<tr>
-			<td align="center">
+	<%@ include file="template/header.jspf" %>
+	<%@ include file="template/menu.jspf" %>
 				<h2>학생성적관리프로그램입니다</h2>
 				<p>메뉴를 선택하세요</p>
 				<p>&nbsp;</p>
 				<p>&nbsp;</p>
 				<p>&nbsp;</p>
-			</td>
-		</tr>
-		<tr>
-			<td bgcolor="gray" align="center">
-				&copy; dqwkdjwqldhwqkdhwqiyghqygdwqhbdwq
-			</td>
-		</tr>
-	</table>
+	<%@ include file="template/footer.jspf" %>			
 </body>
 </html>
