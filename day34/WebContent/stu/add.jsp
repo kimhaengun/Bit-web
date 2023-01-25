@@ -10,7 +10,7 @@
 			<%@ include file="../template/header.jspf" %>
 			<%@ include file="../template/menu2.jspf" %>
 				<h2>학생 성적 입력</h2>
-				<form action="insert.jsp">
+				<form action="insert.jsp" method="post">
 				<table width="600" align="center">
 					<tr>
 						<td>국어</td>
