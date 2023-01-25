@@ -6,7 +6,7 @@
 				<a href="../" style="">home</a>
 				<a href="../stu/list.jsp" style="">list</a>
 				<a href="../stu/add.jsp" style="">insert</a>
-				<a href="#" style="">etc</a>
+				<a href="../user/list.jsp" style="">etc</a>
 				</p>				
 			</td>
 		</tr>
