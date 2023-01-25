@@ -21,22 +21,26 @@
 		
 		
 		try{
-			Class.forName(driver);
-			conn = DriverManager.getConnection(url, user, password);
-			stmt = conn.createStatement();
+			stmt = getConnection().createStatement();
 			rs = stmt.executeQuery(sql);
 			if(rs.next()){
-				kor = rs.getInt("kor");
-				eng = rs.getInt("eng");
-				math = rs.getInt("math");
+				
+					kor = rs.getInt("kor");
+					eng = rs.getInt("eng");
+					math = rs.getInt("math");
+				
 			}
 		}finally{
 			if(rs!=null)rs.close();
 			if(stmt!=null)stmt.close();
-			if(conn!=null)conn.close();
+			if(getConnection()!=null)getConnection().close();
 			
 		}
-		
+		if(request.getParameter("err")!=null){
+	%>
+		<div><font style="color: red">0~100자리 숫자 입력 바랍니다.</font></div>
+	<%
+		}
 	%>
 		<h2>수정 페이지</h2>
 		<form action="update.jsp">
@@ -47,15 +51,15 @@
 			</tr>
 			<tr>
 				<td>국어</td>
-				<td><input type="text" name = "kor" value="<%=kor%>"></td>
+				<td><input type="text" name = "kor" value="<%= request.getParameter("kor")==null?kor:request.getParameter("kor")%>"></td>
 			</tr>
 			<tr>
 				<td>영어</td>
-				<td><input type="text" name = "eng" value="<%=eng%>"></td>
+				<td><input type="text" name = "eng" value="<%= request.getParameter("eng")==null?kor:request.getParameter("eng")%>"></td>
 			</tr>
 			<tr>
 				<td>수학</td>
-				<td><input type="text" name = "math" value="<%=math%>"></td>
+				<td><input type="text" name = "math" value="<%= request.getParameter("math")==null?kor:request.getParameter("math")%>"></td>
 			</tr>
 			<tr>
 				<td colspan="2">

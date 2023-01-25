@@ -10,4 +10,16 @@ String password = env.get("local.mysql.password");
 Connection conn;
 Statement stmt;
 ResultSet rs;
+Connection getConnection(){
+	try{
+	if(conn==null || conn.isClosed()){
+		Class.forName(driver);
+		conn = DriverManager.getConnection(url, user, password);
+		
+	}
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+	return conn;
+}
 %>
