@@ -42,7 +42,7 @@
 						int[] stu = list.get(i);
 					%>
 					<tr>
-						<td><%=stu[0] %></td>
+						<td><a href="detail.jsp?num=<%=stu[0] %>"><%=stu[0] %></td>
 						<td><%=stu[1] %></td>
 						<td><%=stu[2] %></td>
 						<td><%=stu[3] %></td>						
