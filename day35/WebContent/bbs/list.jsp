@@ -48,7 +48,9 @@
 							BbsBean bean = list.get(i);
 					%>
 					<tr align="center">
-						<td><%=bean.getNum() %></td>
+						<td>
+							<a href="detail.jsp?num=<%=bean.getNum()%>"><%=bean.getNum() %></a>
+						</td>
 						<td><%=bean.getSub() %></td>
 						<td><%=bean.getId() %></td>
 						<td><%=bean.getCnt() %></td>
