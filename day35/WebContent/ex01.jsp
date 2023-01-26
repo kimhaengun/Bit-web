@@ -14,7 +14,7 @@
 		<jsp:param value="." name="path"/>
 	</jsp:include>
 				<!-- 내용시작부분 -->
-				<img alt="" src="imgs/seulmap.png" width="80%">
+				<img alt="" src="/day35/imgs/seulmap.png" width="80%">
 				<!-- 내용끝부분 -->
 	<jsp:include page="template/footer.jsp"></jsp:include>
 
