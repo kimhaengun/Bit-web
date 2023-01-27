@@ -11,7 +11,7 @@
 	<jsp:include page="../template/menu.jsp">
 		<jsp:param value=".." name="path"/>
 	</jsp:include>
-	<jsp:useBean id="bean" class="com.bit.BbsBean"></jsp:useBean>
+	<jsp:useBean id="bean" class="com.bit.EmpBean"></jsp:useBean>
 	<jsp:setProperty property="num" name="bean"/>
 	<%@ page import="com.bit.LocalSql, java.sql.*" %>
 	<%

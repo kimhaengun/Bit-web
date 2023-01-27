@@ -22,30 +22,30 @@
 					<%@page import="com.bit.*, java.sql.*" %>
 					<%
 						Connection conn = null;
-						Statement stmt = null;
-						ResultSet rs = null;
-						String sql = "select * from bbs35 order by num desc";
-						ArrayList<BbsBean> list = null;
-						list = new ArrayList<BbsBean>();
-						try{
-							conn = LocalSql.getConnection();
-							stmt = conn.createStatement();
-							rs = stmt.executeQuery(sql);
-							while(rs.next()){
-								BbsBean bean = new BbsBean();
-								bean.setNum(rs.getInt("num"));
-								bean.setSub(rs.getString("sub"));
-								bean.setId(rs.getString("id"));
-								bean.setCnt(rs.getInt("cnt"));
-								list.add(bean);
-							}
-						}finally{
-							if(rs!=null)rs.close();
-							if(stmt!=null)stmt.close();
-							if(conn!=null)conn.close();
-						}
-						for(int i=0; i<list.size(); i++){
-							BbsBean bean = list.get(i);
+									Statement stmt = null;
+									ResultSet rs = null;
+									String sql = "select * from bbs35 order by num desc";
+									ArrayList<EmpBean> list = null;
+									list = new ArrayList<EmpBean>();
+									try{
+										conn = LocalSql.getConnection();
+										stmt = conn.createStatement();
+										rs = stmt.executeQuery(sql);
+										while(rs.next()){
+											EmpBean bean = new EmpBean();
+											bean.setNum(rs.getInt("num"));
+											bean.setSub(rs.getString("sub"));
+											bean.setId(rs.getString("id"));
+											bean.setCnt(rs.getInt("cnt"));
+											list.add(bean);
+										}
+									}finally{
+										if(rs!=null)rs.close();
+										if(stmt!=null)stmt.close();
+										if(conn!=null)conn.close();
+									}
+									for(int i=0; i<list.size(); i++){
+										EmpBean bean = list.get(i);
 					%>
 					<tr align="center">
 						<td>

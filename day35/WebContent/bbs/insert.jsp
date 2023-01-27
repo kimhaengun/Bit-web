@@ -9,7 +9,7 @@
 <body>
 	<!-- 한글 -->
 	<%request.setCharacterEncoding("utf-8"); %>
-	<jsp:useBean id="bean" class="com.bit.BbsBean"></jsp:useBean>
+	<jsp:useBean id="bean" class="com.bit.EmpBean"></jsp:useBean>
 	<jsp:setProperty property="sub" name="bean"/>
 	<jsp:setProperty property="id" name="bean"/>
 	<jsp:setProperty property="content" name="bean"/>

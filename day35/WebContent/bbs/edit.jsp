@@ -9,7 +9,7 @@
 <body>
 	<jsp:include page="../template/header.jsp"></jsp:include>
 	<jsp:include page="../template/menu.jsp"><jsp:param value=".." name="path"/></jsp:include>
-	<jsp:useBean id="bean" class="com.bit.BbsBean"></jsp:useBean>
+	<jsp:useBean id="bean" class="com.bit.EmpBean"></jsp:useBean>
 	<jsp:setProperty property="num" name="bean"/>
 	<h1><%=bean.getNum() %>번 글</h1>
 	<%@ page import="com.bit.LocalSql, java.sql.*" %>

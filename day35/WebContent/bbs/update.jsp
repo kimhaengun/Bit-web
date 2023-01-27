@@ -9,7 +9,7 @@
 </head>
 <body>
 <%request.setCharacterEncoding("utf-8"); %>
-	 <jsp:useBean id="bean" class="com.bit.BbsBean"></jsp:useBean>
+	 <jsp:useBean id="bean" class="com.bit.EmpBean"></jsp:useBean>
 	 <jsp:setProperty property="*" name="bean"/>
 
 	 <%@ page import="com.bit.LocalSql, java.sql.*" %>

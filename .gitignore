@@ -297,3 +297,9 @@ gradle-app.setting
 # End of https://www.toptal.com/developers/gitignore/api/java,eclipse,vagrant,maven,gradle,node
 /.vm30/
 /.vm31/
+/.vm32/
+/.vm35/
+/.vm36/
+/.vmm35/
+/.day31p.war/
+/.stu33.jar/
