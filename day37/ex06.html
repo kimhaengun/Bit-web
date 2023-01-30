@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            /*주석*/
+            /*태그 선택자 - 모든 엘리먼트가 적용*/
+            div{
+                color: red;
+            }
+            /*
+                id 선택자 = #
+                id = 한 문서에서 동일한 id는 오직 한번만 부여 가능
+            */
+            #content{
+                color: aqua;
+            }
+            /*
+                class 선택자 = .
+                class = 동일 class 명 사용 가능
+            */
+            .aside{
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">1</div>
+        <div id="menu">2</div>
+        <div id="content">3</div>
+        <div id="aside" >
+            <div class="aside">4</div>
+            <div class="aside">5</div>
+        </div>
+        <div id="footer">6</div>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            /*
+                선택자 우선 순위
+                인라인 > 아이디 > 클래스 > 태그
+            */
+            #i3{
+                color:blue;
+            }
+            .cl1{
+                color: red;
+            }
+            li{
+                color: chartreuse;
+            }
+
+
+            ol>li:nth-child(2){
+                color: pink;
+            }
+            h1,h2{
+                color: yellow;
+            }
+            h1+h2{
+                color: slategrey;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>선택자</h1>
+        <h2>선택자의 종류</h2>
+        <ul>
+            <li>태그 선택자</li>
+            <li>클래스 선택자</li>
+            <li>아이디 선택자</li>
+        </ul>
+        <div>
+            <h2>선택자를 통한 엘리먼트 선택</h2>
+            <ol>
+                <li style="color: black;">item1</li>
+                <li id = i2>item2</li>
+                <li id = i3 class="cl1">item3</li>
+                <li class="cl1">item4</li>
+            </ol>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            a{
+                color: black;
+            }
+            /*a태그에 마우스 올렸을 때 색 변경*/
+            a:hover{
+                color: red;
+            }
+            /*클릭하는 순간*/
+            a:active{
+                color:blue;
+            }
+            div:hover{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>선택자</h1>
+            <p>
+                <a href="#">link1</a>
+                <a href="#">link2</a>
+                <a href="#">link3</a>
+            </p>
+        <h2>선택자의 종류</h2>
+        <ul id="u1">
+            <li>태그 선택자</li>
+            <li>클래스 선택자</li>
+            <li>아이디 선택자</li>
+        </ul>
+        <div>
+            <h2>선택자를 통한 엘리먼트 선택</h2>
+            <ol>
+                <li style="color: black;">item1</li>
+                <li id = i2>item2</li>
+                <li id = i3 class="cl1">item3</li>
+                <li class="cl1">item4</li>
+            </ol>
+        </div>
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+    </body>
+</html>
