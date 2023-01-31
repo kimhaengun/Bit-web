@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        table{
+            width: 400px;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        table, th, td{
+            border: 1px solid gray;
+        }
+        table th:nth-child(3),
+        table th:first-child,
+        table th:last-child{
+            width:50px;
+        }
+        th{
+            background-color: gray;
+        }
+        tr:nth-child(2n)>td{
+            background-color: aquamarine;
+        }
+        tr:nth-child(2n-1)>td{
+            background-color: yellow;
+        }
+        tbody>tr{
+            border-bottom: 5px solid red;
+        }
+        tr>td:nth-child(2n-1){
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <h1>table</h1>    
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    제목1
+                </th>
+                <th>
+                    제목2
+                </th>
+                <th>
+                    제목3
+                </th>
+                <th>
+                    제목4
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>item</td>
+                <td>item</td>
+                <td>item</td>
+                <td>item</td>
+            </tr>
+            <tr>
+                <td>item</td>
+                <td>item</td>
+                <td>item</td>
+                <td>item</td>
+            </tr>
+            <tr>
+                <td>item</td>
+                <td>item</td>
+                <td>item</td>
+                <td>item</td>
+            </tr>
+            <tr>
+                <td>item</td>
+                <td>item</td>
+                <td>item</td>
+                <td>item</td>
+            </tr>
+            <tr>
+                <td>item</td>
+                <td>item</td>
+                <td>item</td>
+                <td>item</td>
+            </tr>
+            <tr>
+                <td>item</td>
+                <td>item</td>
+                <td>item</td>
+                <td>item</td>
+            </tr>
+            <tr>
+                <td>item</td>
+                <td>item</td>
+                <td>item</td>
+                <td>item</td>
+            </tr>
+            <tr>
+                <td>item</td>
+                <td>item</td>
+                <td>item</td>
+                <td>item</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

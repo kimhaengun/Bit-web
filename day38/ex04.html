@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        /* *{
+            margin: 0px;
+        } */
+        body>*{
+            background-color: aqua;
+        }
+        body>h1:first-child,h2{
+            margin-bottom: 0px;
+        }
+       
+        h1+h1,h2+h2{
+            margin-top: 0px;
+            border: 1px solid red;
+        } 
+        /* h1,h2{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+
+        } */
+        body>h1:first-child{
+            border:1px solid red;
+            border-left: 5px solid black;
+            
+        }
+        h2{
+            padding: 5px 0px 0px 5px;
+        }
+        p{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+        }
+        p+p{
+            border: 5px solid gray;
+        }
+        a{
+            display: block;
+            border: 1px soild black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>h1</h1>  
+    <h1>h1</h1> 
+    <h2>h2</h2>
+    <h2>h2</h2>
+    <p>p</p>
+    <p>p</p>
+    <div>div</div>
+    <div>div</div>
+    <a href="#">inline</a>
+    <a href="#">inline</a>
+    <span>inline</span>
+    <span>inline</span>
+</body>
+</html>
