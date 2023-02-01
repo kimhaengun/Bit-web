@@ -1,0 +1,1 @@
+document.write("<h1>자바 스크립트</h1>")

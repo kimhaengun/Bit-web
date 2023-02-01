@@ -1,0 +1,100 @@
+div{
+    background-color: aqua;
+}
+
+.containerw .grid1, .containerw .grid2, .containerw .grid3, .containerw .grid4,
+.containerw .grid5, .containerw .grid6, .containerw .grid7, .containerw .grid8,
+.containerw .grid9, .containerw .grid110, .containerw .grid11, .containerw .grid12,
+.container .grid1, .container .grid2, .container .grid3, .container .grid4,
+.container .grid5, .container .grid6, .container .grid7, .container .grid8,
+.container .grid9, .container .grid110, .container .grid11, .container .grid12{
+    float: left;
+    box-sizing: border-box;
+}
+.row{
+    clear: both;
+}
+@media screen and (max-width:1199px){
+.container{
+        width: 100%;
+    }
+.container .mgrid1{
+    width: 8.333%;
+}
+.container .mgrid2{
+    width: 16.666%;
+}
+.container .mgrid3{
+    width: 25%;
+}
+.container .mgrid4{
+    width: 33.333%;
+}
+.container .mgrid5{
+    width: 41%;
+}
+.container .mgrid6{
+    width: 50%;
+}
+.container .mgrid7{
+    width: 58%;
+}
+.container .grid8{
+    width: 800px;
+}
+.container .grid9{
+    width: 900px;
+}
+.container .grid10{
+    width: 1000px;
+}
+.container .grid11{
+    width: 1100px;
+}
+.container .grid12{
+    width: 1200px;
+}
+}
+@media screen and (min-width:1200px){
+    
+    .containerw{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .containerw .grid1{
+        width: 100px;
+    }
+    .containerw .grid2{
+        width: 200px;
+    }
+    .containerw .grid3{
+        width: 300px;
+    }
+    .containerw .grid4{
+        width: 400px;
+    }
+    .containerw .grid5{
+        width: 500px;
+    }
+    .containerw .grid6{
+        width: 600px;
+    }
+    .containerw .grid7{
+        width: 700px;
+    }
+    .containerw .grid8{
+        width: 800px;
+    }
+    .containerw .grid9{
+        width: 900px;
+    }
+    .containerw .grid10{
+        width: 1000px;
+    }
+    .containerw .grid11{
+        width: 1100px;
+    }
+    .containerw .grid12{
+        width: 1200px;
+    }
+}
