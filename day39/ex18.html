@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var a = 1111;
+        var b = new Number(1111);
+        var c = new Number(2222);
+        var d = '111';
+        var e = 'aaa';
+        var f = new String('aaa');
+        var g = new String('aaa');
+
+        console.log(a, typeof a);
+        console.log(b, typeof b);
+        console.log(c, typeof b);
+        console.log(a.valueOf());
+        console.log(a==b, b==c);
+        console.log(a===b, b===c);
+        console.log('====================');
+        console.log(e==f, f==g);
+        var h = true;
+        var j = new Boolean(true);
+        /*일반 배열*/
+        var x = [5];
+        x.push(2222);
+        x.push(33333);
+        x.pop();
+        console.log(x.reverse());
+        console.log('==========배열 값 가져오기==========');
+        
+        while(x.length){
+            /*Stack 구조*/
+            console.log(x.pop());
+        }
+        while(x.length){
+            /*Que 구조*/
+            console.log(x.shift);
+        }
+        console.log('====================');
+        var y = new Array(5);
+        console.log(x, y);
+        console.log(x.length, y.length);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
