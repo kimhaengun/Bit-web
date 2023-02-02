@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        //callback
+        //매개변수로 function 넣어주기
+        function func01() {
+            console.log('callback');
+        }
+        var f = func01;
+        function func02(a) {
+            a();
+        }
+        func02(f);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

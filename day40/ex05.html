@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var arr1 = [444,222,111,333];
+        console.log(arr1);
+        //배열 값 뒤집기
+        arr1.reverse();
+        console.log(arr1);
+        //배열 값 정렬 / sort()
+        var f = function (a,b) {
+            // console.log('arg',arguments);
+            // //return -1; //return이 -1이면 reverse()
+            // if(arguments.length==0) return function(a,b){return a-b};
+            // else return arguments();
+            // return a-b; //오름차순
+            // // return a+b; //내림차순
+            // return arguments[0]-arguments[1]; //오름차순
+            // return arguments[1]-arguments[0]; //내림차순
+            return -1;
+        }
+        arr1.sort(f);
+        console.log(arr1);
+
+        var callback = function(a,b,c){
+            console.log('1=',a,'2=',b,'3=',c);
+            console.log(a);
+        }
+        arr1.forEach(callback);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

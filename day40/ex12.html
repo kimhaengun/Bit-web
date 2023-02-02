@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var a;
+        function callback() {
+            console.log('call');
+            a = setTimeout(callback,3000);
+        }
+        callback();
+        setTimeout(function(){
+            clearInterval(a);
+        },10000);
+        // var a = setTimeout(callback,3000); //3초뒤 호출
+        // var a = setInterval(callback,3000); //3초마다 호출
+        // setTimeout(function(){
+        //     clearInterval(a);
+        // },10000)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

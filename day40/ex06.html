@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var obj1={"key1":"val1"};
+        obj1.key2='val2';
+        var f = function (a) {
+            console.log(obj1.key2);
+            console.log(this.key2);
+        };
+        obj1.key3=f;
+        obj1.setKey1 = function (a) {
+            this.key1=a;
+        }
+        obj1.setKey2 = function (a) {
+            this.key2=a;
+        }
+        obj1.getkey1 = function(a){
+            return this.key1;
+        }
+        obj1.getkey2 = function(a){
+            return this.key2;
+        }
+        obj1.setKey1("item1");
+        obj1.setKey2("item2");
+        console.log(obj1.getkey1());
+        console.log(obj1.getkey2());
+        ////////////////////////////////////////////////////////
+        function newInstance(){
+            return new Object();
+        }
+        var arr = [];
+        var obj2 = newInstance();
+        var obj3 = newInstance();
+        arr.push(obj2);
+        arr.push(obj3);
+        arr.push(newInstance());
+        obj2.setKey1 = function (a) {
+            this.key1=a;
+        }
+        obj2.getkey1 = function(a){
+            return this.key1;
+        }
+        obj2.setKey1("obj2 item1");
+        console.log(obj2.getkey1());
+        console.log(obj2,obj3);
+        console.log('arr',arr);
+        // f();
+        // obj1.key3();
+        // for(key in obj1){
+        //     if(typeof obj1[key]=='function')
+        //     obj1[key]();
+        //     else
+        //         console.log(obj1[key]);
+        // }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--
+    <script type="text/javascript">
+        //컴파일(1)
+        var val = func1();
+        console.log(val); //컴파일이 다르기 때문에 함수보다 먼저 선언하면 오류 떨어짐 / 선언이 먼저
+    </script>
+    <script type="text/javascript">
+        //컴파일(2)
+        function func1() {
+            console.log('fun1~~');
+            return 1234;
+        }
+        </script>
+    -->
+
+    <!--정상 코드 / 선언을 먼저 컴파일 해야함-->
+    <script type="text/javascript">
+        //컴파일(1)
+        function func1() {
+            console.log('fun1~~');
+        }
+    </script>        
+    <script type="text/javascript">
+        //컴파일(2)
+        var val = func1();
+        console.log(val);
+        var f = func1;
+        console.log(typeof f);
+        f();
+        console.log('==익명 함수==');
+        var f1 = (function () {
+            console.log('fun1~~');
+        });
+        f1();
+
+        function func01(a,b) {
+            console.log(a,b);
+        }
+        func01(5,2);
+        //오버라이딩 불가능 = b값이 없음으로 undefined 상태로 남아있음
+        //함수이름 중복 불가능
+        func01(5); //5, undefined
+        var f2 = func01(); //undefined, undefined
+
+        console.log('==arguments==');
+        function func001(params) {
+            for(sy of arguments){
+                console.log(sy);
+            }
+        }
+        func001(1,3,5,7);
+        console.log(5,3,34,2,6,67,1);
+        
+        console.log('==전역, 지역==');
+        var a = 1111;
+        function func02() {
+            var a=2222;
+        }
+        func02();
+        console.log('a',a);
+
+
+    </script>    
+</head>
+<body>
+    
+</body>
+</html>
