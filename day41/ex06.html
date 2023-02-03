@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        #target img{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>터센육교트비</h1>
+    </div>
+    <div id="menu">
+        <a href="#">menu</a>
+        <a href="#">menu</a>
+        <a href="#">menu</a>
+        <a href="#">menu</a>
+    </div>
+    <div id="content">
+        <div id="target">
+        </div>
+    </div>
+    <script rel="stylesheet" type="text/javascript">
+        // var target = document.getElementById('target');
+        // var count = 1;
+        // function loop() {
+        //     src="imgs/big0"+count+".jpg";
+        //     target.innerHTML="<img src='"+src+"'>";
+        //     count++;
+        //     if(count==7){
+        //         count=1;
+        //     }
+        // }
+        // setInterval(loop,3000);
+        // loop();
+
+        //3개씩 출력 ex 123, 456
+        // var arr=[
+        // ['<img src = "imgs/big01.jpg">',
+        // '<img src = "imgs/big02.jpg">',
+        // '<img src = "imgs/big03.jpg">']
+        // ,
+        // ['<img src = "imgs/big04.jpg">',
+        // '<img src = "imgs/big05.jpg">',
+        // '<img src = "imgs/big06.jpg">']
+        // ];
+        // var target = document.getElementById('target');
+        // var count = 0;
+        // target.innerHTML=arr[count];
+        // function loop() {
+        //     target.innerHTML=arr[count];
+        //     count++;
+        //     if(count==2){
+        //         count=0;
+        //     }
+        // }
+        // setInterval(loop,3000);
+        // loop();
+        var arr=[
+        '<img src = "imgs/big01.jpg">',
+        '<img src = "imgs/big02.jpg">',
+        '<img src = "imgs/big03.jpg">',
+        '<img src = "imgs/big04.jpg">',
+        '<img src = "imgs/big05.jpg">',
+        '<img src = "imgs/big06.jpg">'
+        ];
+        var target = document.getElementById('target');
+        var count = 0;
+        target.innerHTML='<img src = "imgs/big01.jpg">'+'<img src = "imgs/big02.jpg">'+'<img src = "imgs/big03.jpg">';
+        function loop() {
+            
+            target.innerHTML=arr[count];
+            count++;
+            if(count==2){
+                count=0;
+            }
+        }
+        setInterval(loop,3000);
+        loop();
+    </script>
+    <div id="footer">
+        고객님은 안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한 구매안전서비스 소비자 피해보상보험 서비스를 이용하실 수 있습니다.
+        Copyright © Homeplus Co., LTD. All Rights Reserved.
+    </div>
+</body>
+</html>

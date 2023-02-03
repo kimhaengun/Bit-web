@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var h1;
+        function myload() {
+            h1=document.getElementsByTagName('h1')[0];
+        }
+        window.onload=myload;
+        window.onbeforeunload=function () {
+            console.log('unlog');
+        }
+        window.onerror=function(){};
+        window.onbeforeprint=function(){
+            console.log('before...');
+        };
+        //반응형 width 알림
+        window.onresize=function(){
+            console.log(window.innerWidth);
+        }
+
+        window.onscroll=function(){
+            // if(window.innerHeight-200<window.pageYOffset){
+            //     document.querySelector("body").innerHTML=
+            //     document.querySelector("body").innerHTML+'<p>넘어옴</p>';
+            // }
+            console.log(window.innerHeight, window.pageYOffset);
+        }
+    </script>
+</head>
+<body>
+    <h1>dom level2 event</h1>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <br/>
+    <br/>
+
+
+    <br/>
+    <br/>
+
+    <br/>
+    <br/>
+
+    <br/>
+    <br/><br/>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <br/>
+    <br/>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <br/>
+</body>
+</html>

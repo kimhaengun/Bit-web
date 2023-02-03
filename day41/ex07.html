@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        #carousel{
+            overflow: hidden;
+        }
+        #carousel>ul{
+            list-style: none;
+            padding: 0px;
+        }
+        #carousel>ul>li{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="carousel">
+        <ul>
+            <li><img src="imgs/thumb01.jpg" alt=""></li>
+            <li><img src="imgs/thumb02.jpg" alt=""></li>
+            <li><img src="imgs/thumb03.jpg" alt=""></li>
+            <li><img src="imgs/thumb04.jpg" alt=""></li>
+            <li><img src="imgs/thumb05.jpg" alt=""></li>
+            <li><img src="imgs/thumb06.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var w = 100;
+        var carousel = document.getElementById('carousel');
+        var ul = carousel.firstElementChild;
+        // carousel.style.width=w+'px';
+        // carousel.style.height=w+'px';
+        for(li of ul.children){
+            li.firstElementChild.style.width=w+'px';
+        }
+        ul.style.marginLeft="0px";
+        cnt=0;
+        var callback=function(){
+            if(cnt==-1*w*(6-1)){
+                cnt=w;
+            }
+            cnt-=w/16;
+            ul.style.marginLeft=cnt+"px";
+        };
+        setInterval(callback,60);
+    </script>
+</body>
+</html>

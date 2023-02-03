@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+		*{}
+        #myHr{
+            border: 0;
+    		height: 1px;
+    		background: #ccc;
+        }
+		#header{
+			margin:0 300px 0 300px;
+		}
+		#header>h1{
+			width: 122px;
+            height: 129px;
+            text-indent: -99999px;
+            background-image: url("imgs/logo2.png");
+		}
+		#header #loginForm{
+			float: right;
+		}
+		#header #loginForm>a{
+			text-decoration: none;
+			color: gray;
+		}
+		#header #loginForm>a:hover{
+			color: blue;
+		}
+		/*메뉴바, footer css*/
+		#menu, #footer{
+			background-color: rgb(230,230,250);
+		}
+
+		#menu{
+			overflow: hidden;
+		}
+		#menu>ul{
+			width: 500px;
+            margin: 0 auto;
+		}
+		#menu>ul>li{
+			list-style: none;
+			float: left;
+			width: 60px;
+			text-align: center;
+			width: 100px;
+		}
+		#menu>ul>li>a{
+			height: 80px;
+			line-height: 80px;
+			text-decoration: none;
+			font-size: 20px;		
+			color: black;
+			display: block;
+		}
+		#menu>ul>li>a:hover{
+			background-color: blueviolet;
+			color: white;
+		}
+    </style>
+    <script type="text/javascript">
+    </script>
+</head>
+<body>
+	<div id="header">
+		<div id="loginForm">
+			<a href="#">로그인</a>
+			<a href="#">회원가입</a>
+		</div>
+		<h1>Logo</h1>
+	</div>
+	<hr id="myHr"/>
+	<div id="menu">
+		<ul>
+			<li><a href="#">item1</a></li>
+			<li><a href="#">item2</a></li>
+			<li><a href="#">item3</a></li>
+			<li><a href="#">item4</a></li>
+		</ul>
+	</div>
+	<div id="content">
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+	</div>
+	<div id=footer>
+		<p>Visit Mozilla Corporation’s not-for-profit parent, the Mozilla Foundation.</p>
+		<p>Portions of this content are ©1998–2023 by individual mozilla.org contributors. Content available under a Creative Commons license.</p>
+	</div>
+	
+</body>
+</html>

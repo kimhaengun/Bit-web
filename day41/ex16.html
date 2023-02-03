@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            overflow: hidden;
+        }
+        #container{
+            overflow: hidden;
+            
+        }
+        #content img{
+            float: left;
+            width: 100px;
+            height: 100px;
+        }
+        #leftBtn, #rightBtn{
+            float: left;
+            width: 100px;
+            height: 100px;
+        }
+
+    </style>
+    <script type="text/javascript">
+        var leftBtn, content, rightBtn,a; 
+        window.onload=function(){
+            // leftBtn=document.querySelector('#leftBtn');
+            // content=document.querySelector('#content');
+            // rightBtn=document.querySelector('#rightBtn');
+            // content.innerHTML='<img src = "imgs/big01.jpg">';
+            // count = 1;
+
+            // leftBtn.onclick=function(){
+            //         count--;
+            //         if(count==7||count==0){
+            //             count=6
+            //         }
+            //         src="imgs/big0"+count+".jpg";
+            //         content.innerHTML="<img src='"+src+"'>";
+            // }
+
+            // rightBtn.onclick=function(){
+            //         count++;
+            //         if(count==7||count==0){
+            //             count=1
+            //         }
+            //         src="imgs/big0"+count+".jpg";
+            //         content.innerHTML="<img src='"+src+"'>";
+            // }
+            leftBtn=document.querySelector('#leftBtn');
+            content=document.querySelector('#content');
+            rightBtn=document.querySelector('#rightBtn');
+            content.innerHTML='<img src = "imgs/big01.jpg">';
+            count = 1;
+            leftBtn.onclick=function(){
+                clearInterval(a);
+                function leftOt(){
+                    count--;
+                    if(count==7||count==0){
+                        count=6
+                    }
+                    src="imgs/big0"+count+".jpg";
+                    content.innerHTML="<img src='"+src+"'>";
+                }
+                a=setInterval(leftOt,1000);
+            }
+
+            rightBtn.onclick=function(){
+                clearInterval(a);
+                function rightOt(){
+                    count++;
+                    if(count==7||count==0){
+                        count=1
+                    }
+                    src="imgs/big0"+count+".jpg";
+                    content.innerHTML="<img src='"+src+"'>";
+                    }
+                a=setInterval(rightOt,1000);
+                rightBtn.ondblclick = fun
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="container">
+        <button id="leftBtn">Left</button>
+        <div id="content">
+        </div>
+        <button id="rightBtn">Right</button>
+    </div>
+</body>
+</html>

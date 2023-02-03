@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">
+        <h1>터센육교트비</h1>
+    </div>
+    <div id="menu">
+        <a href="#">menu</a>
+        <a href="#">menu</a>
+        <a href="#">menu</a>
+        <a href="#">menu</a>
+    </div>
+    <div id="content">
+        <div class="target">
+            <img src="imgs/big01.jpg">
+            <img src="imgs/big02.jpg">
+            <img src="imgs/big03.jpg">
+            <img src="imgs/big04.jpg">
+            <img src="imgs/big05.jpg">
+            <img src="imgs/big06.jpg">
+        </div>
+        <div class="carousel">
+
+        </div>
+    </div>
+    <div id="footer">
+        고객님은 안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한 구매안전서비스 소비자 피해보상보험 서비스를 이용하실 수 있습니다.
+        Copyright © Homeplus Co., LTD. All Rights Reserved.
+    </div>
+    <script type="text/javascript">
+        var arr=[];
+        var target = document.lastElementChild
+                             .lastElementChild
+                             .firstElementChild
+                             .nextElementSibling
+                             .nextElementSibling
+                             .firstElementChild;
+        var size =target.childElementCount;
+        for(var i=0; i<size; i++){
+            arr.push(target.removeChild(target.firstElementChild));
+        }
+        var carousel = target.nextElementSibling;
+        for(img of arr){img.style.width='300px'};
+        carousel.appendChild(arr.shift());
+        var callback = function(){
+            var before = carousel.removeChild(carousel.firstElementChild);
+            arr.push(before);
+            carousel.appendChild(arr.shift());
+        };
+        setInterval(callback,3000);
+                         
+    </script>
+</body>
+</html>
