@@ -4,22 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../css/myProject.css" rel="stylesheet">
 <title>Insert title here</title>
-<link href="css/myProject.css" rel="stylesheet">
-<script type="text/javascript">
-</script>
 </head>
 <body>
-	<jsp:include page="includes/header.jsp">
-		<jsp:param value="." name="path"/>
+	<jsp:include page="../includes/header.jsp">
+		<jsp:param value=".." name="path"/>
 	</jsp:include>
-	<jsp:include page="includes/menu.jsp">
-		<jsp:param value="." name="path"/>
+	<jsp:include page="../includes/menu.jsp">
+		<jsp:param value=".." name="path"/>
 	</jsp:include>
 	<div id="content">
-		<h1>index</h1>
+		<h1>Join</h1>
 	</div>
-	<jsp:include page="includes/footer.jsp"></jsp:include>
-	
+	<jsp:include page="../includes/footer.jsp"></jsp:include>
 </body>
 </html>
