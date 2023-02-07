@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        window.onload=function(){
+
+        };
+    </script>
+</head>
+<!--
+    input 값 찾기
+    $('input').eq(1).val();
+    $('input').eq(1).attr('value');
+
+    선택하기
+    radio
+    $(':radio').eq(1).attr('checked','checked');
+    checkbox
+    $(':checkbox').eq(1).attr('checked','checked');
+    select
+    $('option').eq(1).attr('selected','selected');
+-->
+
+<body>
+    <h1>attr</h1>
+    <form action="">
+        <div><label>id</label><input type="text" readonly="readonly"></div>
+        <div><label>pw</label><input type="password"></div>
+        <div><label>number</label><input type="number" readonly></div>
+        <div><input type="radio" name="ra"><label>radio1</label>
+            <input type="radio" name="ra"><label>radio2</label>
+            <input type="radio" name="ra"><label>radio3</label>
+        </div>
+        <div><input type="checkbox"><label>cb1</label>
+            <input type="checkbox"><label>cb2</label>
+            <input type="checkbox"><label>cb3</label>
+        </div>
+        <div>
+            <select>
+                <option>option1</option>
+                <option>option2</option>
+                <option>option3</option>
+                <option>option4</option>
+            </select>
+        </div>
+    </form>
+</body>
+</html>

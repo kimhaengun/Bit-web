@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <style type="text/css">
+        ul{
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+        }
+        ul>li{
+            float: left;
+        }
+        ul>li>img{
+            width: 100px;
+        }
+        .carousel{
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            setInterval(loop,1000);
+
+            function loop(){
+                $('ul').children().first().appendTo('ul');
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="carousel">
+    <ul>
+        <li><img src="imgs/thumb01.jpg"></li>
+        <li><img src="imgs/thumb02.jpg"></li>
+        <li><img src="imgs/thumb03.jpg"></li>
+        <li><img src="imgs/thumb04.jpg"></li>
+        <li><img src="imgs/thumb05.jpg"></li>
+        <li><img src="imgs/thumb06.jpg"></li>
+    </ul>
+</div>
+</body>
+</html>

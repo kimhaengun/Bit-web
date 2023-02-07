@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <style type="text/css">
+        ul{
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        ul>li{
+            float: left;
+        }
+        ul>li>img{
+            width: 100px;
+        }
+        div{
+            /*
+            width: 300px;
+            height: 100px;
+            overflow: hidden;
+            margin: 0 auto;
+            */
+        }
+    </style>
+    <script type="text/javascript">
+        var cnt=0;
+        $(function(){
+            //$('ul').css('margin-left',cnt-=100);
+            //$('ul').children().first().clone().appendTo('ul');
+            //$('ul').children().first().next().clone().appendTo('ul');
+            $('ul')
+                .children()
+                    .first().clone().appendTo('ul')
+                        .end()
+                    .end()
+                .next().clone().appendTo('ul');
+            setInterval(loop,1000);
+        })
+        function loop(){
+            cnt++;
+           if(cnt==6)cnt=0;
+           $('ul').css('margin-left',-100*cnt);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><img src="imgs/thumb01.jpg"></li>
+            <li><img src="imgs/thumb02.jpg"></li>
+            <li><img src="imgs/thumb03.jpg"></li>
+            <li><img src="imgs/thumb04.jpg"></li>
+            <li><img src="imgs/thumb05.jpg"></li>
+            <li><img src="imgs/thumb06.jpg"></li>
+        </ul>
+    </div>
+</body>
+</html>

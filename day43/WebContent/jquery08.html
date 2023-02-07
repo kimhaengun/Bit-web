@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        window.onload=function(){
+            console.log($('ul').html());
+            console.log($('ul').text());
+            //기존요소 + item5
+            $('ul').html($('ul').html()+'<li>item5</li>');
+            $('ol').html('<li>item5</li>');
+            /*
+                append 요소 뒤에 dom 추가
+                prepend 요소 앞에 dom 추가
+            */
+            //기존요소 + item6
+            $('ol').append('<li>item6</li>');
+            //item7+기존요소
+            $('ol').prepend('<li>item7</li>');
+            $('ol').prepend('<li>item8</li>');
+            //ul에 있는 item5 ol로 이동(추가)
+            //$('ol').prepend(document.querySelector('ul>li:last-child'));
+            $('ol').prepend($('ul>li').last());
+            //ul의 마지막 li를 잡아서 il에 prepend로 추가
+            $('ul>li').last().prependTo('ol');
+            $('ol').children().last().appendTo('ul');
+            /*
+                before = 요소 전에 추가
+                after = 요소 후에 추가
+            */
+            $('ol').before('<p>before1</p>');
+            $('ol').before('<p>before2</p>');
+            $('ol').after('<p>after1</p>');
+            $('ol').after('<p>after2</p>');
+            //ol요소를 전에 ul 추가
+            $('ol').insertBefore('ul');
+            // $('#target').html('<img src="imgs/logo2.png"/>')
+
+            $(function(){
+                console.log($('h1').html());
+            });
+            
+            //요소 삭제
+            //$('h1').remove(); //요소 완전 삭제
+            //$('h1').empty(); // 요소가 없어졌지만 남아있음
+            
+        }
+    </script>
+</head>
+<body>
+    <h1>inner html&text</h1>
+    <div id="target">
+
+    </div>
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+        </ul>
+        <ol>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+        </ol>
+</body>
+</html>

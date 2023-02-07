@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        window.onload=function(){
+            $('h1').css('color','red');
+            $('h1').css('background-color','aqua');
+            $('h1').css('width',200);
+            var callback=function(idx,val){
+                console.log(idx,val);
+                return "rgb(255,0,0,"+idx/5+")";
+            }
+            $('li').css('background-color',callback);
+
+        }
+    </script>
+</head>
+<body>
+        <h1>style 속성</h1>
+        <ul>
+            <li><a href="#">link</a></li>
+            <li><a href="#">link</a></li>
+            <li><a href="#">link</a></li>
+            <li><a href="#">link</a></li>
+            <li><a href="#">link</a></li>
+        </ul>
+</body>
+</html>
