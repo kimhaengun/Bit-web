@@ -16,7 +16,7 @@
 			<th>학번</th>
 			<th>이름</th>
 		</tr>
-		<%@page import="com.bit.user.LocalMysql, java.sql.*" %>
+		<%@page import="com.bit.LocalMysql, java.sql.*" %>
 		<%!
 			Connection conn;
 			Statement stmt;

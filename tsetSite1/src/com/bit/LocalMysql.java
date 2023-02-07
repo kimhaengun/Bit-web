@@ -1,15 +1,14 @@
-package com.bit.user;
+package com.bit;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
 import java.util.Map;
-
-import com.mysql.cj.jdbc.Driver;
 
 public class LocalMysql {
 	private static Connection conn;
-	private LocalMysql() {}
+	public LocalMysql() {
+		// TODO Auto-generated constructor stub
+	}
 	public static Connection getConnection() {
 		Map<String, String>env = System.getenv();
 		try {
@@ -26,6 +25,7 @@ public class LocalMysql {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
+		
 		return conn;
 	}
 }
