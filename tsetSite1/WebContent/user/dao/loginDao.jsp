@@ -11,24 +11,30 @@
 		//한글 깨짐 방지
 		request.setCharacterEncoding("UTF-8");
 	%>
-	<jsp:useBean id="bean" class="com.bit.user.UserBean"></jsp:useBean>
-	<jsp:setProperty property="*" name="bean"/>
+	<jsp:useBean id="user" class="com.bit.user.UserBean" scope="session"></jsp:useBean>
+	<jsp:setProperty property="*" name="user"/>
 	<%@ include file="../../../template/sql.jspf" %>
 	<%
-		String sql = "insert into user (id,password,nickName) values('"
-					+bean.getId()+"','"
-					+bean.getPw()+"','"
-					+bean.getNickName()+"')";
+		String sql = "select userNo, id, nickName from user where id='"
+					+user.getId()+"' and password = '"
+					+user.getPw()+"'";
 		System.out.println(sql);
 		try{
 			conn = getConnection();
 			stmt = conn.createStatement();
-			stmt.executeUpdate(sql);
+			rs = stmt.executeQuery(sql);
+			if(rs.next()){
+				user.setUserNo(rs.getInt("userNo"));
+				user.setNickName(rs.getString("nickName"));
+				System.out.println("로그인 후 bean 확인");
+				System.out.println(user.getUserNo()+", "+user.getId()+", "+user.getNickName());
+			}
 		}finally{
+			if(rs!=null)rs.close();
 			if(stmt!=null)stmt.close();
 			if(conn!=null)conn.close();
 		}
-	response.sendRedirect("../login.jsp");
+		response.sendRedirect("../../");
 	%>
 </body>
 </html>

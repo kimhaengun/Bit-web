@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        var cnt=1;
+        var callback1 = function(){
+            console.log($(this).text()+'클릭');
+        }
+        $(function(){
+            $(document).delegate('div>button','click',callback1);
+            $(document).delegate('div>button','click',function(){
+                console.log($(this).text()+'클릭2'); 
+            });
+            // delegate 해제
+            //$(document).undelegate('div>button','click');
+
+            $('button').click(function(){
+                //클릭 시 버튼 생성
+                cnt++;
+                $('div').append('<button>btn'+cnt+'</button>');
+                // $('button').last().click(function(){
+                //     console.log($(this).text()+'클릭');
+                // });
+            });
+            //div요소 안에 button을 클릭하면 callback함수가 발동됨.
+        });
+    </script>
+</head>
+<body>
+    <h1>이벤트</h1>
+    <div>
+        <button>btn1</button>
+    </div>
+    
+</body>
+</html>

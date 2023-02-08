@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        /*
+            on의 장점
+        */
+        $(function(){
+            //on=여러번
+            // $('button').on('click',{key:'abc'},function(e){
+            //one = 한번만
+            $('button').one('click',{key:'abc'},function(e){    
+                console.log('클릭',e.data);
+            });
+            //input 값 입력 시 계속 발생하는 이벤트!!!!!
+            // $('input').on('keyup',function(){
+            //     console.log($(this).val());
+            // });
+            // 1.이벤트 두개 한번에 처리가능(keydown, keyup)
+            // $('input').on('keydown keyup',function(){
+            //     console.log($(this).val());
+            // });
+            $('input').on('keyup',function(){
+                 console.log($(this).val());
+            }).on('focus click',function(){
+                // $(this).val("");
+                $('button').trigger('click');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>event on</h1>
+    <input/>
+    <button>btn</button>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('div').children().filter('label:first-child').css({display:'block',width:$('input').first().outerWidth()+"px",'backgroundColor':'red'});
+            $('form').submit(function(){
+                console.log('안가');
+                return false;
+            });
+            $('input').eq(0).focus(function(){
+                console.log('focus');
+                //값 비우기
+                //$(this).val("");
+                //이전 값 존재하면서 블록쳐짐
+                $(this).select();
+            }).blur(function(){
+                console.log($(this).val());
+                if($(this).val().length<4){
+                    $(this).css({border:'1px solid red'});
+                }else{
+                    $(this).css({border:'1px solid rgb(118,118,118)'});
+                }
+            });
+            $('input').eq(1).keyup(function(){
+                if($(this).val().length>4){
+                    //$('input').eq(2).focus();
+
+                    //children() 자식 요소중 filter를 통해 input 찾기
+                    //$(this).parent().next().children().filter('input').focus();
+                    
+                    //find = 자식요소중 input을 찾음
+                    $(this).parent().next().find('input').focus();
+
+                }
+            });
+            $('input').eq(2).select(function(){
+                console.log($(this).val());
+            });
+            $('select').add($('input:eq(0)')).add($(':checkbox')).change(function(){
+                console.log($(this).val());
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>form event</h1>
+    <form action="http://naver.com">
+        <div>
+            <label>id</label>
+            <input type="text">
+        </div>
+        <div>
+            <label>pw</label>
+            <input type="password">
+        </div>
+        <div>
+            <label>num</label>
+            <input type="text">
+        </div>
+        <div>
+            <input type="checkbox" value="cb1">
+            <label>item1</label>
+            <input type="checkbox" value="cb2">
+            <label>item2</label>
+            <input type="checkbox" value="cb3">
+            <label>item3</label>
+            <input type="checkbox" value="cb4">
+            <label>item4</label>
+        </div>
+        <div>
+            <input type="radio">
+            <label>radio1</label>
+            <input type="radio">
+            <label>radio2</label>
+            <input type="radio">
+            <label>radio3</label>
+            <input type="radio">
+            <label>radio4</label>
+        </div>
+        <div>
+            <select>
+                <option>item1</option>
+                <option>item2</option>
+                <option>item3</option>
+                <option>item4</option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="submit1">
+            <input type="reset" value="reset1">
+            <button>submit1</button>
+            <button type="submit">submit2</button>
+            <button type="reset">reset</button>
+        </div>
+    </form>
+    <button>outbtn</button>
+</body>
+</html>

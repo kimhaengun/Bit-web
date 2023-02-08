@@ -3,10 +3,16 @@
     <% 
     	String path = request.getParameter("path");
     %>
+    <jsp:useBean id="user" class="com.bit.user.UserBean" scope="session"></jsp:useBean>
 	<div id="header">
 		<div id="loginForm">
-			<a href="<%=path %>/user/login.jsp">로그인</a>
-			<a href="<%=path %>/user/join.jsp">회원가입</a>
+			<%if(user.getId()==null||user.getId()=="") {%>
+				<a href="<%=path %>/user/login.jsp">로그인</a>
+				<a href="<%=path %>/user/join.jsp">회원가입</a>
+			<%}else{ %>
+				<div id="q"><%=user.getId() %></div>
+				<a href="<%=path %>/user/logout.jsp">로그아웃</a>
+			<%} %>
 		</div>
 		<h1>Logo</h1>
 	</div>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        var callback=function(){
+            console.log('end');
+        }
+        $(function(){
+            // $('div').eq(0).css({height:'5px',width:0+'px', backgroundColor:'red'})
+            // $('button').first().click(function(){
+            //     // $('div').hide(3000,callback);
+            //     $('div').eq(1).hide({
+            //         duration:3000,
+            //         easing:'linear',
+            //         complete:callback,
+            //         // step:function(a,b){
+            //         //     console.log(b);
+            //         // }
+            //         progress:function(a,b,c){
+            //             $('div').eq(0).width(b*100+"%");
+            //         }
+            //     });
+            // })
+            // .next().click(function(){
+            //     $('div').show(3000);
+            // })
+            // .next().click(function(){
+            //     $('div').toggle(3000);
+            // })
+
+
+             $('div').last().css({backgroundColor:'red'});
+            $('button')
+            .eq(0).click(function(){
+                $('div').last().slideUp(3000);
+            })
+            .end().eq(1).click(function(){
+                $('div').last().slideDown(3000);
+            })
+            .end().eq(2).click(function(){
+                $('div').last().stop().slideToggle(3000);
+            })
+
+            
+            // $('button')
+            // .eq(0).click(function(){
+            //     $('div').last().fadeOut(3000);
+            // })
+            // .end().eq(1).click(function(){
+            //     $('div').last().fadeIn(3000);
+            // })
+            // .end().eq(2).click(function(){
+            //     $('div').last().fadeToggle(3000);
+            // })
+            // .end().eq(3).click(function(){
+            //     $('div').last().fadeTo(3000,0,function(){
+            //         $('div').last().height(0);
+            //     });
+            // })
+        });
+        
+    </script>
+</head>
+<body>
+    <div></div>
+    <button>btn1</button>
+    <button>btn2</button>
+    <button>btn3</button>
+    <button>btn4</button>
+    <div>
+        웅대한 있으며, 이상의 황금시대다. 이상의 일월과 있는 가장 할지라도 싶이 듣기만 기쁘며, 봄바람이다. 그들은 천하를 것은 얼마나 위하여서, 그림자는 천자만홍이 보이는 뿐이다. 풀밭에 위하여 이것이야말로 얼마나 있다. 우는 미묘한 우리는 살 대고, 이것이다. 인간이 돋고, 길지 품으며, 칼이다. 남는 동력은 품으며, 웅대한 방황하여도, 칼이다. 그들은 고행을 설레는 끓는 같은 어디 얼마나 부패뿐이다. 가는 보내는 인생에 이성은 목숨이 이것이다. 사라지지 동력은 가치를 새 끓는 있다. 장식하는 그들을 그와 무엇을 천고에 내려온 노래하며 칼이다.
+
+        날카로우나 청춘 공자는 길을 사막이다. 할지라도 그러므로 봄날의 부패뿐이다. 위하여, 방황하여도, 않는 고행을 풍부하게 있으며, 방지하는 것이다. 못하다 것이다.보라, 어디 약동하다. 꽃이 이는 앞이 쓸쓸하랴? 없으면, 노년에게서 꽃 위하여 가는 미인을 칼이다. 속에 인간에 새가 석가는 그들은 그들은 하여도 그들은 얼음에 뿐이다. 생의 따뜻한 행복스럽고 유소년에게서 우리 우리 청춘 것이다. 용감하고 있으며, 크고 하여도 생생하며, 때까지 청춘의 날카로우나 돋고, 것이다. 돋고, 인간이 끝까지 원대하고, 청춘 길을 인간의 있는가?
+        
+        청춘을 하는 과실이 가치를 피고 꽃이 있다. 그들의 가진 때에, 대고, 심장은 싶이 커다란 끓는 찾아다녀도, 황금시대다. 물방아 듣기만 길을 듣는다. 사는가 인간에 피는 풀이 피가 것은 따뜻한 봄바람이다. 이성은 청춘 있는 이상은 그들에게 남는 가치를 사막이다. 물방아 생생하며, 하여도 가진 있는 불어 청춘은 청춘의 작고 아니다. 끓는 모래뿐일 청춘을 주는 속에 무엇을 용기가 피다. 인간은 그들에게 충분히 남는 되는 보이는 사랑의 가는 부패뿐이다. 행복스럽고 열락의 그들에게 뜨거운지라, 위하여, 이것이다. 가는 노년에게서 옷을 이상의 뿐이다. 것은 고행을 많이 자신과 천하를 뿐이다.
+    </div>
+    <p>end</p>
+</body>
+</html>

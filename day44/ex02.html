@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        div{
+            width: 300px;
+            background-color: blue;
+        }
+        div>div{
+            width: 200px;
+            background-color: black;
+        }
+        div>div>div{
+            width: 100px;
+            background-color: blueviolet;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //console.log($('button').length);
+            $('button').click(function(e){
+                console.log('클릭',$(e.target).html(), $(this).html());
+            })
+            .next().dblclick(function(){
+                console.log('더블클릭');
+            })
+            .next().mouseenter(function(){
+                    console.log('down');
+                 }).mouseleave(function(){
+                    console.log('up');
+            })
+            .next().mouseover(function(){
+                    console.log('위로');
+                 }).mouseout(function(){
+                    console.log('밖으로');
+                 })
+            .next().hover(function(){
+                console.log('올라가거나 나갈때');
+            })
+            ;
+
+            $('div').mouseenter(function(){
+                    console.log('위로');
+                 }).mouseleave(function(){
+                    console.log('밖으로');
+                 });
+
+            $('a').click(function(e){
+                e.preventDefault();
+                console.log('페이지 이동x');
+                
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>마우스 Event</h1>
+    <a href="https://m.naver.com">naver</a>
+    <button>btn1</button>
+    <button>btn2</button>
+    <button>btn3</button>
+    <button>btn4</button>
+    <button>btn5</button>
+    <div>
+        box1
+        <div>
+            box2
+            <div>box3</div>
+        </div>
+    </div>
+</body>
+</html>

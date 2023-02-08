@@ -2,28 +2,27 @@ package com.bit.user;
 
 public class UserBean {
 	private int userNo;
-	private String userId;
-	private String userPw;
+	private String id;
+	private String pw;
 	private String checkPw;
-	private String userNickName;
-	
+	private String nickName;
 	public int getUserNo() {
 		return userNo;
 	}
 	public void setUserNo(int userNo) {
 		this.userNo = userNo;
 	}
-	public String getUserId() {
-		return userId;
+	public String getId() {
+		return id;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getUserPw() {
-		return userPw;
+	public String getPw() {
+		return pw;
 	}
-	public void setUserPw(String userPw) {
-		this.userPw = userPw;
+	public void setPw(String pw) {
+		this.pw = pw;
 	}
 	public String getCheckPw() {
 		return checkPw;
@@ -31,12 +30,14 @@ public class UserBean {
 	public void setCheckPw(String checkPw) {
 		this.checkPw = checkPw;
 	}
-	public String getUserNickName() {
-		return userNickName;
+	public String getNickName() {
+		return nickName;
 	}
-	public void setUserNickName(String userNickName) {
-		this.userNickName = userNickName;
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
 	}
+	
+	
 	
 	
 }

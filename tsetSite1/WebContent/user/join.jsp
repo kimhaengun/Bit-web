@@ -6,62 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="../css/myProject.css" rel="stylesheet">
 <title>Insert title here</title>
-<style type="text/css">
-	#content{
-		
-		width: 500px;
-		margin: 30px auto;
-	}
-	#jointext{
-		font-size: 20px;
-		font-weight: bold;
-	}
-	#joinform{
-		border:2px solid gray;
-		width: 500px;
-		border-radius: 10px;
-	}
-	#joinform>p{
-		
-		color: red;
-		margin: 0px 0px 10px 10px;
-	}
-	#joinform>input{
-		width:95%;
-		margin:0px 10px 5px 10px;
-		font-size: 20px;
-	}
-	#joinform>div{
-		margin-bottom: 5px;
-	}
-	#joinform>div>input{
-		margin-left:10px;
-		margin-top:20px;
-		font-size: 20px;
-		width: 80%;
-	}
-	#joinform>div>button{
-		height: 30px;
-		background-color: 
-	}
-	#joinform>a{
-		display:inline-block;
-		text-decoration: none;
-		color: #29B6F6;
-		margin-left: 10px;
-	}
-	#joinform>button{
-		height: 50px;
-		margin: 10px 10px 20px 10px; 
-		width: 480px;
-		font-size: 30px;
-		background-color: #0c1254;
-		border:0px;
-		border-radius: 10px;
-		color: white;
-	}
-	
-</style>
+	<script type="text/javascript">
+		var form
+	</script>
 </head>
 <body>
 	<jsp:include page="../includes/header.jsp">
@@ -76,15 +23,15 @@
 		<div id="jointext">회원가입</div>
 		<div id="joinform">
 				<div>
-					<input placeholder="아이디" type="text" name="userId">
+					<input placeholder="아이디" type="text" name="id">
 					<button>중복체크</button>
 				</div>
 				<p>아이디를 입력해주세요</p>
-				<input placeholder="비밀번호" type="password" name="userPw">
+				<input placeholder="비밀번호" type="password" name="pw">
 				
 				<input placeholder="비밀번호 확인" type="password" name="checkPw">
 
-				<input placeholder="닉네임" type="text" name="userNickName">
+				<input placeholder="닉네임" type="text" name="nickName">
 
 				<button type="submit">회원가입</button>
 		</div>
