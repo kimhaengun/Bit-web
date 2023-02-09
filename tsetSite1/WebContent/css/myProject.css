@@ -87,7 +87,7 @@
 			width: 500px;
 			border-radius: 10px;
 		}
-		#loginform>input{
+		#loginform>div>input{
 			width:95%;
 			margin:20px 10px 10px 10px;
 			font-size: 20px;
@@ -97,6 +97,10 @@
 			text-decoration: none;
 			color: #29B6F6;
 			margin-left: 10px;
+		}
+		#loginform>p,#loginform>div>p{
+			color: red;
+			margin: 0px 0px 10px 10px;
 		}
 		#loginform>button{
 			height: 50px;
@@ -118,12 +122,12 @@
 			width: 500px;
 			border-radius: 10px;
 		}
-		#joinform>p{
+		#joinform>div>p, #joinform>div>input+p{
 			
 			color: red;
 			margin: 0px 0px 10px 10px;
 		}
-		#joinform>input{
+		#joinform>div>input{
 			width:95%;
 			margin:0px 10px 5px 10px;
 			font-size: 20px;
@@ -131,11 +135,12 @@
 		#joinform>div{
 			margin-bottom: 5px;
 		}
-		#joinform>div>input{
+		#joinform>div>#id{
 			margin-left:10px;
 			margin-top:20px;
 			font-size: 20px;
-			width: 80%;
+			width: 77%;
+			display: inline-block;
 		}
 		#joinform>div>button{
 			height: 30px;

@@ -6,8 +6,44 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="../css/myProject.css" rel="stylesheet">
 <title>Insert title here</title>
-
+	<script type="text/javascript">
+		var form, loginform, id, pw, p;
+		window.onload=function(){
+			form = document.querySelector('form');
+			id = document.querySelector('#id');
+			pw = document.querySelector('#pw');
+			
+			form.onsubmit=function(){
+				for(ele of form.querySelectorAll('div')) {
+					p = ele.querySelector('p');
+					if(p) p.parentElement.removeChild(p);
+				};
+				
+				//id값 없을 경우
+				if(id.value==''){
+					p = document.createElement('p');
+					p.appendChild(document.createTextNode('*회원 아이디를 입력해주세요.'));
+					id.parentElement.appendChild(p);
+					return false;
+				}
+				//pw값 없을 경우
+				if(pw.value==''){
+					p = document.createElement('p');
+					p.appendChild(document.createTextNode('*회원 비밀번호를 입력해주세요.'));
+					pw.parentElement.appendChild(p);
+					return false;
+				}
+				return true;
+			}
+		};
+	</script>
 </head>
+<% 
+	String result="";
+	if(("false").equals(request.getParameter("result"))){
+			result="로그인 실패하였습니다.";
+	}
+%>
 <body>
 	<jsp:include page="../includes/header.jsp">
 		<jsp:param value=".." name="path"/>
@@ -15,13 +51,19 @@
 	<jsp:include page="../includes/menu.jsp">
 		<jsp:param value=".." name="path"/>
 	</jsp:include>
-	
 	<form action="../user/dao/loginDao.jsp" method="post">
 	<div id="content">
 		<div id="logintext">ID 로그인</div>
 		<div id="loginform">
-				<input placeholder="아이디" type="text" name="id">
-				<input placeholder="비밀번호" type="password" name="pw">
+			<div>
+				<input placeholder="아이디" type="text" name="id" id="id">
+			</div>
+			<div>
+				<input placeholder="비밀번호" type="password" name="pw" id="pw">
+			</div>
+				<p>
+					<%=result %>
+				</p>
 				<a href="join.jsp">회원가입</a>
 				<button type="submit">로그인</button>
 		</div>

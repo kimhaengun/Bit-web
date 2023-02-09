@@ -25,16 +25,26 @@
 			rs = stmt.executeQuery(sql);
 			if(rs.next()){
 				user.setUserNo(rs.getInt("userNo"));
+				user.setId(rs.getString("id"));
 				user.setNickName(rs.getString("nickName"));
 				System.out.println("로그인 후 bean 확인");
 				System.out.println(user.getUserNo()+", "+user.getId()+", "+user.getNickName());
+			}else{
+				user.setId("");
 			}
 		}finally{
 			if(rs!=null)rs.close();
 			if(stmt!=null)stmt.close();
 			if(conn!=null)conn.close();
 		}
-		response.sendRedirect("../../");
+		System.out.println(user.getId());
+		if(user.getId()==null || user.getId()==""){
+				response.sendRedirect("../../user/login.jsp?result=false");							
+		}else{
+				response.sendRedirect("../../");	
+		}
+		
+		
 	%>
 </body>
 </html>

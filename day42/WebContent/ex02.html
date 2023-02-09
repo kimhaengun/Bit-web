@@ -19,6 +19,7 @@
 			re=form.querySelectorAll('input')[2];
 			sel=form.querySelector('select');
 			item0=sel.querySelector('option');
+			
 			sel.onfocus=function(){
 				sel.style.backgroundColor='white';
 				//select클릭 시 내용 날려버리기 
@@ -26,6 +27,7 @@
 				//sel.innerHTML=
 					//"<option>item1</option><option>item2</option><option>item3</option><option>item4</option>";
 			};
+			
 			form.onsubmit=function(){
 				//올바를시 경고문구 제거
 				//if(id.parentElement.querySelector('span'))id.parentElement.removeChild(span);
