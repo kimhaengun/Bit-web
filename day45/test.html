@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <style type="text/css">
+        .carousel{
+            width: 500px;
+            height: 100px;
+            
+        }
+        #content{
+            width: 300px;
+            height: 100px;
+            overflow: hidden;
+            float: left;
+        }
+        ul{
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            width: 600px;
+        }
+        ul>li>img{
+            width: 100px;
+            float: left;
+        }
+        #prevbtn, #nextbtn{
+            float: left;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script type="text/javascript">
+        
+        $(function(){
+            // $('ul').children().next().next().next().next().clone().appendTo('ul').next().clone().prependTo('ul');
+            // $('ul')
+                // .children()
+                //     .first().clone().appendTo('ul')
+                //         .end()
+                //         .end()
+                // .next().clone().appendTo('ul');
+
+
+            var cnt=1;
+
+            $('#prevbtn').click(function(){
+                
+                $('ul').animate({marginLeft:-100*cnt+100+'px'});
+                cnt--;
+                if(cnt<=-1){
+                    $('ul').animate({marginLeft:-500+'px'});
+                    cnt==5;
+                }
+
+            })
+            $('#nextbtn').click(function(){
+                $('ul').animate({marginLeft:'-100px'},1000,function(){
+                    $('ul').css("margin-left","0px");
+                    $('li').eq(0).appendTo('ul');
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="carousel">
+        <button id="prevbtn">prev</button>
+        <div id="content">
+            <ul id="ul1">
+                <li><img src="imgs/thumb01.jpg"></li>
+                <li><img src="imgs/thumb02.jpg"></li>
+                <li><img src="imgs/thumb03.jpg"></li>
+                <li><img src="imgs/thumb04.jpg"></li>
+                <li><img src="imgs/thumb05.jpg"></li>
+                <li><img src="imgs/thumb06.jpg"></li>
+            </ul>
+        </div>
+        <button id="nextbtn">next</button>
+    </div>
+</body>
+</html>

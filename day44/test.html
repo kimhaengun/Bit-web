@@ -40,9 +40,11 @@
                 $('ul').clearQueue().stop();
                 callback();
             }else{
-                $('ul').animate({marginLeft:-100*cnt+'px'},1000);
+                $('ul').animate({marginLeft:-100*cnt+'px'},1000,function(){
+                    $('li').eq(0).appendTo('ul');
+                });
             }
-            // $('li').eq(0).appendTo('ul');
+            // 
         }
 
         $(function(){
