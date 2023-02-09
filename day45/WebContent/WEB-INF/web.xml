@@ -13,7 +13,11 @@
   	<servlet-name>xml01</servlet-name>
   	<url-pattern>/ex11.xml</url-pattern>
   </servlet-mapping>
-  
+  <servlet-mapping>
+  	<servlet-name>json01</servlet-name>
+  	<url-pattern>/ex13.json</url-pattern>
+  </servlet-mapping>
+    
   <servlet>
   	<servlet-name>ex06</servlet-name>
   	<servlet-class>com.bit.step03.Ex06Controller</servlet-class>
@@ -21,5 +25,9 @@
     <servlet>
   	<servlet-name>xml01</servlet-name>
   	<servlet-class>com.bit.ex.Xml01Controller</servlet-class>
+  </servlet>
+   <servlet>
+  	<servlet-name>json01</servlet-name>
+  	<servlet-class>com.bit.ex.JsonController</servlet-class>
   </servlet>
 </web-app>
