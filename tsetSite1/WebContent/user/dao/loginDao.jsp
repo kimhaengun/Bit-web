@@ -39,7 +39,7 @@
 		}
 		System.out.println(user.getId());
 		if(user.getId()==null || user.getId()==""){
-				response.sendRedirect("../../user/login.jsp?result=false");							
+				response.sendRedirect("../../user/login.jsp?loginResult=false");							
 		}else{
 				response.sendRedirect("../../");	
 		}

@@ -40,7 +40,7 @@
 </head>
 <% 
 	String result="";
-	if(("false").equals(request.getParameter("result"))){
+	if(("false").equals(request.getParameter("loginResult"))){
 			result="로그인 실패하였습니다.";
 	}
 %>
@@ -64,7 +64,7 @@
 				<p>
 					<%=result %>
 				</p>
-				<a href="join.jsp">회원가입</a>
+				<a href="joinForm.jsp">회원가입</a>
 				<button type="submit">로그인</button>
 		</div>
 	</div>

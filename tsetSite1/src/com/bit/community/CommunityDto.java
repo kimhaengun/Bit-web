@@ -1,5 +1,5 @@
 package com.bit.community;
 
-public class CommunityBean {
+public class CommunityDto {
 
 }

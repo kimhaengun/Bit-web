@@ -12,14 +12,14 @@
 		}
 		#header>h1{
 			width: 122px;
-            height: 129px;
+            height: 59px;
             text-indent: -99999px;
             background-image: url("../imgs/logo2.png");
 		}
 		#header #loginForm{
 			float: right;
 			height: 10px;
-			padding-top: 100px;
+			padding-top: 50px;
 			
 		}
 		#header #loginForm>a{
@@ -74,10 +74,10 @@
 		
 		/*로그인*/
 		#content{
-			
 			width: 500px;
 			margin: 30px auto;
 		}
+		
 		#logintext{
 			font-size: 20px;
 			font-weight: bold;
@@ -165,4 +165,5 @@
 		#joinform>button:hover,#loginform>button:hover{
 			background-color: blue;
 		}
-			
+		/*게시판*/
+		

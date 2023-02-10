@@ -6,6 +6,6 @@
 	<div id="menu">
 		<ul>
 			<li><a href="<%=path %>/index.jsp">HOME</a></li>
-			<li><a href="#">게시물</a></li>
+			<li><a href="<%=path %>/community/listForm.jsp">게시물</a></li>
 		</ul>
 	</div>
