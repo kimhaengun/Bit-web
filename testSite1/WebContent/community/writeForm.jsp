@@ -1,3 +1,4 @@
+<%@page import="org.apache.catalina.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -54,36 +55,39 @@
 </script>
 </head>
 <body>
-	<jsp:include page="../includes/header.jsp">
-		<jsp:param value=".." name="path"/>
-	</jsp:include>
-	
-	<jsp:include page="../includes/menu.jsp">
-		<jsp:param value=".." name="path"/>
-	</jsp:include>
 
-		<div id="content_cm">
+
+	<%@include file="../includes/menu.jsp" %>
+	<%
+		//로그인 안된 사용자 글쓰기 접근 시 로그인 페이지로 이동
+		if("GET".equals(request.getMethod())){
+			if(user.getId()==null||"".equals(user.getId())){
+				response.sendRedirect("../user/loginForm.jsp");
+			}
+		}
+	%>
+	<form action="../community/write" method="post">
+	<div id="content_cm">
 		<div id="contentLeft">
 			<div>게시판</div>
 		</div>
 		<div id="contentRight">
 			<div>작성</div>
 			<div id="cmWriteFormContent">
+			<input type="hidden" name="id" value="<%=user.getId() %>"/>
                 <div>
-                    <input  placeholder="제목을 입력해 주세요"/>
+                    <input  placeholder="제목을 입력해 주세요" name="title"/>
                 </div>
                 <div>
-                    <input placeholder="내용을 입력해 주세요"/>
+                    <input placeholder="내용을 입력해 주세요" name="content"/>
                 </div>
-			</div>
             <div>
-                <button>수정</button>
-                <button>삭제</button>
                 <button>글작성</button>
             </div>
+			</div>
 		</div>
 	</div>
-
+	</form>
 	<jsp:include page="../includes/footer.jsp"></jsp:include>
 </body>
 </html>

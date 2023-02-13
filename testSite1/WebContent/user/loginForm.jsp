@@ -45,12 +45,7 @@
 	}
 %>
 <body>
-	<jsp:include page="../includes/header.jsp">
-		<jsp:param value=".." name="path"/>
-	</jsp:include>
-	<jsp:include page="../includes/menu.jsp">
-		<jsp:param value=".." name="path"/>
-	</jsp:include>
+	<%@include file="../includes/menu.jsp" %>
 	<form action="../user/dao/loginDao.jsp" method="post">
 	<div id="content">
 		<div id="logintext">ID 로그인</div>

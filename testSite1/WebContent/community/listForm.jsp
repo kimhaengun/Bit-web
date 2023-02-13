@@ -1,3 +1,5 @@
+<%@page import="com.bit.dto.CommunityDto"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -110,6 +112,15 @@
     	height: 20px;
     	width: 70px;
     }
+    table>tbody>tr>td:nth-child(2)>a,table>tbody>tr>td:nth-child(3)>a {
+    	text-decoration: none;
+    	color: black;
+	}
+	table>tbody>tr>td:nth-child(2)>a:hover,
+	table>tbody>tr>td:nth-child(3)>a:hover {
+		text-decoration: underline;
+		color: blue;
+	}
 </style>
 <script type="text/javascript">
 	//$('#contentRight').children().eq(1);
@@ -117,14 +128,8 @@
 </script>
 </head>
 <body>
-	<jsp:include page="../includes/header.jsp">
-		<jsp:param value=".." name="path"/>
-	</jsp:include>
-	
-	<jsp:include page="../includes/menu.jsp">
-		<jsp:param value=".." name="path"/>
-	</jsp:include>
-	
+
+	<%@include file="../includes/menu.jsp" %>
 	<div id="content_cm">
 		<div id="contentLeft">
 			<div>게시판</div>
@@ -143,77 +148,24 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <% 
+                    	List<CommunityDto> list = null;
+                    	list = (List<CommunityDto>)request.getAttribute("communityList");
+                    	int listsize = list.size();
+                    	for(CommunityDto dto : list){
+                    		
+                    %>
                         <tr>
-                            <td>1</td>
-                            <td>제목1</td>
-                            <td>테스트1</td>
-                            <td>2023=02=11</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>제목1</td>
-                            <td>테스트1</td>
-                            <td>2023=02=11</td>
-                            <td>111</td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>제목1</td>
-                            <td>테스트1</td>
-                            <td>2023=02=11</td>
-                            <td>1111</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>제목1</td>
-                            <td>테스트1</td>
-                            <td>2023=02=11</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>11111</td>
-                            <td>제목1</td>
-                            <td>테스트1</td>
-                            <td>2023=02=11</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>11111</td>
-                            <td>제목1</td>
-                            <td>테스트1</td>
-                            <td>2023=02=11</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>11111</td>
-                            <td>제목1</td>
-                            <td>테스트1</td>
-                            <td>2023=02=11</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>11111</td>
-                            <td>제목1</td>
-                            <td>테스트1</td>
-                            <td>2023=02=11</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>11111</td>
-                            <td>제목1</td>
-                            <td>테스트1</td>
-                            <td>2023=02=11</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>11111</td>
-                            <td>제목1</td>
-                            <td>테스트1</td>
-                            <td>2023=02=11</td>
-                            <td>4</td>
-                        </tr>
-                        
+                            <td><%=listsize%></td>
+                            <td><a href="detail?communityNo=<%=dto.getCommunityNo() %>"><%=dto.getTitle() %></a></td>
+                            <td><a href="#"><%=dto.getId() %></a></td>
+                            <td><%=dto.getHiredate() %></td>
+                            <td><%=dto.getCounts() %></td>
+                        </tr>                   
+                    <%
+                    	listsize--;
+                    	}
+                    %>     
                     </tbody>
                 </table>
 			</div>
@@ -232,7 +184,11 @@
                 <a href="#">10</a>
                 <a href="#">&raquo;</a>
                 <div id="cmWriteBtn">
-					<a href="writeForm.jsp">글작성</a>
+                	<%if(user.getId()==null || "".equals(user.getId())) {%>
+                		<a href="../user/loginForm.jsp">글작성</a>
+                	<%}else{ %>
+						<a href="write">글작성</a>
+					<%} %>
 				</div>
               </div>
 		</div>

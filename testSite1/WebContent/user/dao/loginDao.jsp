@@ -15,7 +15,7 @@
 	<jsp:setProperty property="*" name="user"/>
 	<%@ include file="../../../template/sql.jspf" %>
 	<%
-		String sql = "select userNo, id, nickName from user where id='"
+		String sql = "select id, nickName from user where id='"
 					+user.getId()+"' and password = '"
 					+user.getPw()+"'";
 		System.out.println(sql);
@@ -24,11 +24,10 @@
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			if(rs.next()){
-				user.setUserNo(rs.getInt("userNo"));
 				user.setId(rs.getString("id"));
 				user.setNickName(rs.getString("nickName"));
 				System.out.println("로그인 후 bean 확인");
-				System.out.println(user.getUserNo()+", "+user.getId()+", "+user.getNickName());
+				System.out.println(user.getId()+", "+user.getNickName());
 			}else{
 				user.setId("");
 			}

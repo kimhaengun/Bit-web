@@ -28,7 +28,7 @@
 			if(stmt!=null)stmt.close();
 			if(conn!=null)conn.close();
 		}
-	response.sendRedirect("../login.jsp");
+	response.sendRedirect("../loginForm.jsp");
 	%>
 </body>
 </html>

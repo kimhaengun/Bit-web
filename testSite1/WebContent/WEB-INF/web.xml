@@ -9,4 +9,32 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>write</servlet-name>
+  	<servlet-class>com.bit.controller.WriteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>write</servlet-name>
+  	<url-pattern>/community/write</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>list</servlet-name>
+  	<servlet-class>com.bit.controller.ListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>list</servlet-name>
+  	<url-pattern>/community/list</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>detail</servlet-name>
+  	<servlet-class>com.bit.controller.DetailController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>detail</servlet-name>
+  	<url-pattern>/community/detail</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

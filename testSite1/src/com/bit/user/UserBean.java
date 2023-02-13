@@ -1,17 +1,11 @@
 package com.bit.user;
 
 public class UserBean {
-	private int userNo;
 	private String id;
 	private String pw;
 	private String checkPw;
 	private String nickName;
-	public int getUserNo() {
-		return userNo;
-	}
-	public void setUserNo(int userNo) {
-		this.userNo = userNo;
-	}
+
 	public String getId() {
 		return id;
 	}
