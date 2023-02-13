@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>day45</display-name>
+  <welcome-file-list>
+    <welcome-file>ex01.html</welcome-file>
+  </welcome-file-list>
+  
+  <servlet-mapping>
+  	<servlet-name>ex06</servlet-name>
+  	<url-pattern>/ex08.html</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>xml01</servlet-name>
+  	<url-pattern>/ex11.html</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ex06</servlet-name>
+  	<servlet-class>com.bit.step03.Ex06Controller</servlet-class>
+  </servlet>
+    <servlet>
+  	<servlet-name>xml01</servlet-name>
+  	<servlet-class>com.bit.ex.Xml01Controller</servlet-class>
+  </servlet>
+</web-app>

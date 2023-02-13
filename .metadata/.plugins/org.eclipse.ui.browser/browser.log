@@ -1,0 +1,12 @@
+
+2월 10, 2023 14:44:05.622 NEW SESSION
+2월 10, 2023 14:44:05.622 [4032:5284:0210/144405.620:ERROR:device_event_log_impl.cc(215)] [14:44:05.621] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+2월 10, 2023 14:45:03.351 [4032:6820:0210/144503.351:ERROR:util.cc(134)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+2월 10, 2023 15:33:41.901 [316:7676:0210/153341.901:ERROR:device_event_log_impl.cc(215)] [15:33:41.902] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+2월 10, 2023 15:34:39.780 [316:5704:0210/153439.780:ERROR:util.cc(134)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+2월 10, 2023 19:30:16.926 [316:7676:0210/193016.926:ERROR:CONSOLE(1)] "Request Storage.getStorageKeyForFrame failed. {"code":-32602,"message":"Frame tree node for given frame not found"}", source: devtools://devtools/bundled/devtools-frontend/front_end/core/protocol_client/protocol_client.js (1)
+2월 10, 2023 19:30:16.927 [316:7676:0210/193016.927:ERROR:CONSOLE(1)] "Request Storage.getStorageKeyForFrame failed. {"code":-32602,"message":"Frame tree node for given frame not found"}", source: devtools://devtools/bundled/devtools-frontend/front_end/core/protocol_client/protocol_client.js (1)
+
+2월 10, 2023 20:13:40.460 NEW SESSION
+2월 10, 2023 20:13:40.460 [4028:5032:0210/201340.459:ERROR:device_event_log_impl.cc(215)] [20:13:40.459] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+2월 10, 2023 20:14:38.221 [4028:9476:0210/201438.220:ERROR:util.cc(134)] Can't create base directory: C:\Program Files\Google\GoogleUpdater

@@ -1,0 +1,24 @@
+package com.bit.step03;
+
+import java.io.IOException;
+
+import javax.servlet.GenericServlet;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+
+public class Ex05Controller extends GenericServlet{
+
+	@Override
+	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+		HttpServletRequest request = (HttpServletRequest)req;
+		System.out.println(request.getMethod());
+		if("GET".equals(request.getMethod())) {
+			
+		}else if("POST".equals(request.getMethod())) {
+			
+		}
+	}
+
+}

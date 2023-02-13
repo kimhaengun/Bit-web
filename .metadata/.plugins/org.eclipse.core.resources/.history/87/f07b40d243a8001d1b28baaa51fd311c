@@ -1,0 +1,17 @@
+package com.bit.step02;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+public class Ex04Controller extends Ex03Controller{
+
+	@Override
+	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

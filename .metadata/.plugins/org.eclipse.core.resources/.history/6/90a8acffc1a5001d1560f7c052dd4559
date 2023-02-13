@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		var form, id;
+		window.onload=function(){
+			form = document.querySelector('form');
+			id=form.querySelectorAll('input')[0];
+			pw=form.querySelectorAll('input')[1];
+			re=form.querySelectorAll('input')[2];
+			sel=form.querySelector('select');
+			sel.onfocus=function(){
+				console.log('선택');
+			}			
+			form.onsubmit=function(){
+				console.log(sel.value=='done');
+				//if(id.value=='')return false;
+				//if(pw.value=='')return false;
+				//if(re.value=='')return false;
+				//if(pw.value!=re.value)return false;
+				if(sel.value=='done')return false;
+				return false;
+			}
+		};
+	</script>
+</head>
+<body>
+	<h1>join</h1>
+	<form action="ex02.jsp">
+		<div>
+			<label for="pw">id</label>
+			<input type="text" name="id" id="id">
+		</div>
+		<div>
+			<label for="pw">pw</label>
+			<input type="text" name="pw" id="pw">
+		</div>
+		<div>
+			<label for="re">re</label>
+			<input type="text" id="re">
+		</div>
+		<div>
+			<label for="name">name</label>
+			<input type="text" name="name" id="name">
+		</div>
+		<div>
+			<select name="sel">
+				<option value="done" selected="selected">선택해주세요</option>
+				<option>item1</option>
+				<option>item2</option>
+				<option>item3</option>
+				<option>item4</option>
+			</select>
+		</div>
+		<div>
+			<button type="submit">전송</button>
+			<button type="reset">취소</button>
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../css/myProject.css" rel="stylesheet">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		var form,joinform, id, pw, checkPw, nickName;
+		window.onload=function(){
+			form = document.querySelector('form');
+			joinform = document.querySelector('#joinform');
+			id = document.querySelector('#id');
+			pw = document.querySelector('#pw');
+			checkPw = document.querySelector('#checkPw');
+			
+			form.onsubmit=function(){
+				console.log('form 클릭');
+				// id값 없을 경우
+				if(id.value==''){
+					console.log('아이디 없음');
+					return false;
+				}
+				// pw값 없을 경우
+				if(pw.value==''){
+					console.log('pw없음');
+					return false;
+				}
+				// checkPw값 없을 경우
+				if(checkPw.value==''){
+					console.log('check pw 없음');
+					return false;
+				}
+				// pw, checkPw 값이 다를 경우
+				if(pw.value != checkPw.value){
+					console.log('pw ㅏㄷ름');
+					return false;
+				}
+			}
+			
+		}
+	</script>
+</head>
+<body>
+	<jsp:include page="../includes/header.jsp">
+		<jsp:param value=".." name="path"/>
+	</jsp:include>
+	<jsp:include page="../includes/menu.jsp">
+		<jsp:param value=".." name="path"/>
+	</jsp:include>
+
+	<form action="../user/dao/joinDao.jsp" method="post">
+	<div id="content">
+		<div id="jointext">회원가입</div>
+		<div id="joinform">
+				<div>
+					<input placeholder="아이디" type="text" name="id" id="id">
+					<button>중복체크</button>
+				</div>
+				<p>아이디를 입력해주세요</p>
+				<input placeholder="비밀번호" type="password" name="pw" id="pw">
+				
+				<input placeholder="비밀번호 확인" type="password" name="checkPw" id="checkPw">
+
+				<input placeholder="닉네임" type="text" name="nickName" id="nickName">
+
+				<button type="submit">회원가입</button>
+		</div>
+	</div>
+	</form>
+	
+	<jsp:include page="../includes/footer.jsp"></jsp:include>
+	
+</body>
+</html>

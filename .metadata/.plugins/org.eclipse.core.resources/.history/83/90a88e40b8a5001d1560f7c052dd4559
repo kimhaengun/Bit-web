@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		.container{
+			margin: 0px auto;
+		}
+		.container>div{
+		}
+		#header{
+		}
+		#header>h1{
+			width: 121px;
+			height: 129px;
+			background-image: url("imgs/logo2.png");
+			text-indent: -9999px;
+		}
+		#menu{
+			overflow: hidden;
+			background-color: navy;
+		}
+		#menu>ul{
+			list-style: none;
+			padding: 0px;
+		}
+		#menu>ul>li{
+			width: 100px;
+			float: left;
+		}
+		#menu>ul>li>a{
+			height: 35px;
+			color: white;
+			display: block;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+		#content{
+		}
+		#content .carousel{
+			width: 100px;
+			height: 100px;
+			position: relative;
+		}
+		#content.carousel>div{
+			width: 100px;
+			height: 100px;
+			overflow: hidden;
+		}
+		#content .carousel>a{
+			width: 30px;
+			height: 100px;
+			display: block;
+			background-color: gray;
+			position: absolute;
+			top: 0px;
+			left: 100px;
+			text-align: centet;
+			line-height: 100px;
+			text-decoration: none;
+			color: white;
+			font-size: 40px;
+		}
+		#content .carousel>ul{
+			overflow: hidden;
+			list-style: none;
+			width: 600px;
+			height:100px;
+			padding: 0px;
+		}
+		#content .carousel>ul>li{
+			float: left;
+		}
+		#content .carousel>ul>li>a{}
+		#content .carousel>ul>li>a>img{
+			width: 100px;
+		}
+		#footer {
+			clear: both;
+		}
+	</style>
+	<script type="text/javascript">
+		var carousel,prv,nxt,div;
+		window.onload=function(){
+			carousel=document.querySelector('.carousel');
+			div=document.createElement('div');
+			ul=carousel.querySelector('ul');
+			div.appendChild(ul);
+			
+			ul.style.margin='0px';
+			nxt=document.createElement('a');
+			nxt.appendChild(document.createTextNode('>'));
+			nxt.href='#';
+			carousel.appendChild(nxt);
+			nxt.onclick=function(e){
+				var x = parseInt(ul.style.marginLeft)-100;
+				if(x==-600){
+					x=0;
+				}
+				ul.style.marginLeft=x+'px';
+				return false;
+			}
+			
+			
+		}
+	</script>
+</head>
+<body>
+	<div class = container>
+		<div id="header">
+			<h1>비트</h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="#">menu</a></li>
+				<li><a href="#">menu</a></li>
+				<li><a href="#">menu</a></li>
+				<li><a href="#">menu</a></li>
+			</ul>
+		</div>
+		<div id="content">
+			<div class="carousel">
+				<ul>
+					<li><a href=""><img src="imgs/thumb01.jpg"/></a></li>
+					<li><a href=""><img src="imgs/thumb02.jpg"/></a></li>
+					<li><a href=""><img src="imgs/thumb03.jpg"/></a></li>
+					<li><a href=""><img src="imgs/thumb04.jpg"/></a></li>
+					<li><a href=""><img src="imgs/thumb05.jpg"/></a></li>
+					<li><a href=""><img src="imgs/thumb06.jpg"/></a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="footer">
+			<p>For further API reference and developer documentation, see Java SE Documentation. That documentation contains more detailed, developer-targeted descriptions, with conceptual overviews, definitions of terms, workarounds, and working code examples.</p>
+			<p>Copyright © 1993, 2023, Oracle and/or its affiliates. All rights reserved. Use is subject to license terms. Also see the documentation redistribution policy. Modify 쿠키 환경설정. Modify Ad Choices.</p>
+		</div>
+	</div>
+</body>
+</html>

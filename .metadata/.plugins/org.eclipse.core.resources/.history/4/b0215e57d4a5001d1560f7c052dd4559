@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var btn;
+	window.onload=function(){
+		btn=document.querySelector("button");
+		/*btn.onclick = function(){
+			console.log('level2 event...');
+		};*/
+		var callback=function(){
+			console.log('level3 event..');
+		}
+		btn.addEventListener('',callback);//(Event이름,callback)
+	}
+</script>
+</head>
+<body>
+	<h1>DOM level3 event</h1>
+	<button>버튼</button>
+</body>
+</html>

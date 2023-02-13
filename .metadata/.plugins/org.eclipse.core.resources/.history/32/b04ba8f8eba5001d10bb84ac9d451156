@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		var xhr, target, btn;
+		window.onload=function(){
+			target = document.querySelector("#target");
+			btn = document.querySelector('button');
+			btn.onclick= function(){				
+				xhr = new XMLHttpRequest();
+				
+				xhr.onreadystatechange=function(ele){
+					console.log(ele);
+					target.innerHTML=ele.target.responseText;;
+				}
+				xhr.open('get','ajax0101.jsp');
+				xhr.send();
+			}
+		};
+	</script>
+</head>
+<body>
+	<h1>ajax통신</h1>
+	<div id="target"></div>
+	<input/>
+	<p>위는 결과<button>가져오기</button></p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+package com.bit.util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class BitSql {
+	private static Connection conn;
+	private static String driver;
+	private static String url;
+	private static String user;
+	private static String password;
+	
+	private BitSql() {}
+	
+	public static Connection getConnection() {
+		try {
+			if(conn==null || conn.isClosed()) { //conn이 없거나 닫혀 있을 경우
+				Class.forName(diver);
+				conn = DriverManager.getConnection(url, user, password);
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return conn;
+	}
+}

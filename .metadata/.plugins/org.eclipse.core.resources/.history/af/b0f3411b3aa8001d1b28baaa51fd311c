@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var option={
+                minSlides:1, //최소 몇개
+                maxSlides:3, //몇개 출력?
+                slideWidth:200, //넓이
+                moveSlides:1, //한장씩 넘기기
+                mode:'horizontal', //한장씩
+                // speed:3000,
+                slideMargin:50,
+                captions:true,
+                pager:true,
+                pagerSelector:$('p') //p태그 안에 페이징
+
+
+            }
+            $('.slider').bxSlider(option);
+        });
+    </script>
+</head>
+<body>
+    <div class="slider">
+        <div><img src="imgs/thumb01.jpg" title="img1"></div>
+        <div><img src="imgs/thumb02.jpg" title="img2"></div>
+        <div><img src="imgs/thumb03.jpg" title="img3"></div>
+        <div><img src="imgs/thumb04.jpg" title="img4"></div>
+        <div><img src="imgs/thumb05.jpg" title="img5"></div>
+        <div><img src="imgs/thumb06.jpg" title="img6"></div>
+      </div>
+      <p></p>
+</body>
+</html>
