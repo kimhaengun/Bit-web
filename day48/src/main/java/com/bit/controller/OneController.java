@@ -11,27 +11,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bit.model.DeptDao;
+import com.bit.model.DeptDto;
 
-public class EditController extends HttpServlet{
+public class OneController extends HttpServlet {
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		ServletContext sc = req.getServletContext();
 		String url = sc.getInitParameter("url");
 		String user = sc.getInitParameter("user");
 		String password = sc.getInitParameter("password");
 		DeptDao dao = new DeptDao(url, user, password);
-		
 		int deptno = Integer.parseInt(req.getParameter("deptno")); 
-		String dname = req.getParameter("dname");
-		String loc = req.getParameter("loc");
+		
 		resp.setHeader("Access-Control-Allow-Origin", "*");
-		try {
-			 dao.editOne(deptno, dname, loc);
+		try(PrintWriter out=resp.getWriter();){
+			out.print("{\"dept\":[");
+			DeptDto dto = dao.selectOne(deptno);
+			out.print(dto);
+			out.print("]}");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			resp.sendError(resp.SC_BAD_REQUEST);
+			e.printStackTrace();
 		}
 		
 	}
+	
 }
