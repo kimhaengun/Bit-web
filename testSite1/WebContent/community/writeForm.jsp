@@ -40,15 +40,45 @@
 	#contentRight>div:nth-child(1){
         font-size: 30px;
 		text-align: center;
-        margin-bottom: 10px;
 	}
 	
 	#contentRight>div:nth-child(2){
         width: 100%;
-        margin: 0px auto;
+        margin: 10px auto;
         text-align: center;
-        background-color: #a9a9a9;
 	}
+	#cmWriteFormContent{
+		margin-top: 10px;
+	}
+	#cmWriteFormContent>div>button{
+		width: 150px;
+		height: 40px;
+		margin-top: 12px;
+		color: white;
+		background-color: #0c1254;
+		font-size: 20px;
+		border-radius: 10px;
+	}
+	#titledom>input{
+		width: 95%;
+		height: 60px;
+		border: 2px solid #a9a9a9;
+		margin-top: 10px;
+		border-radius: 10px;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	#contentdom>textarea{
+		margin-top: 10px;
+		width: 95%;
+		height: 300px;
+		border-radius: 10px;
+		overflow: auto;
+		border: 2px solid #a9a9a9;
+		font-size: 15px;
+	}
+
+}
 </style>
 <script type="text/javascript">
 	
@@ -74,16 +104,16 @@
 		<div id="contentRight">
 			<div>작성</div>
 			<div id="cmWriteFormContent">
-			<input type="hidden" name="id" value="<%=user.getId() %>"/>
-                <div>
-                    <input  placeholder="제목을 입력해 주세요" name="title"/>
-                </div>
-                <div>
-                    <input placeholder="내용을 입력해 주세요" name="content"/>
-                </div>
-            <div>
-                <button>글작성</button>
-            </div>
+				<input type="hidden" name="id" value="<%=user.getId() %>"/>
+	                <div id="titledom">
+	                    <input  placeholder="제목을 입력해 주세요" name="title" />
+	                </div>
+	                <div id="contentdom">
+	                    <textarea placeholder="내용을 입력해 주세요" name="content"/></textarea>
+	                </div>
+	            <div>
+	                <button>등록</button>
+	            </div>
 			</div>
 		</div>
 	</div>

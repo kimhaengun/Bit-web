@@ -6,6 +6,7 @@
 		<item value="Apache Tomcat v7.0"/>
 	</list>
 	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="E:\webspace\libs\day48.war"/>
 		<item value="E:\webspace\vm36\day36.war"/>
 		<item value="E:\webspace\day34.war"/>
 		<item value="E:\webspace\day31p.war"/>
