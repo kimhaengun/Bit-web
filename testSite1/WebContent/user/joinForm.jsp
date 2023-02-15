@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
 <link href="../css/myProject.css" rel="stylesheet">
 <title>Insert title here</title>
 	<script type="text/javascript">
@@ -63,6 +64,11 @@
 				}
 				return true;
 			}
+			$('#checkBtn').click(function(){
+					console.log('클릭');
+					$.get()
+				return false;
+			});
 			
 		}
 	</script>
@@ -76,7 +82,7 @@
 		<div id="joinform">
 				<div>
 					<input placeholder="아이디" type="text" name="id" id="id">
-					<button type="reset">중복체크</button>
+					<button id="checkBtn">중복체크</button>
 				</div>
 				<div>
 					<input placeholder="비밀번호" type="password" name="pw" id="pw">

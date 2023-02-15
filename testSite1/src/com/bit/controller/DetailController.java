@@ -2,6 +2,7 @@ package com.bit.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +19,9 @@ public class DetailController extends HttpServlet{
 		System.out.println("디페일 페이징 요청옴 : "+no);
 		CommunityDao dao = new CommunityDao();
 		CommunityDto dto = dao.selectOne(no);
+		req.setAttribute("communityInfo", dto);
+		RequestDispatcher rd =req.getRequestDispatcher("detailForm.jsp");
+		rd.forward(req, resp);
 		
 	}
 }

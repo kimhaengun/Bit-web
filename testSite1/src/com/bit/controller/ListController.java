@@ -17,8 +17,12 @@ public class ListController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("리스트 페이지 요청 드렁옴");
+		int page = Integer.parseInt(req.getParameter("page"));
+		int limit = 10;
+		int offset = (limit*(page-1));
 		CommunityDao dao = new CommunityDao();
-		List<CommunityDto> list = dao.listAll();
+		List<CommunityDto> list = dao.listAll(limit, offset);
+		System.out.println("!!!!!!!"+list);
 		req.setAttribute("communityList", list);
 		RequestDispatcher rd =req.getRequestDispatcher("listForm.jsp");
 		rd.forward(req, resp);

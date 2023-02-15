@@ -42,7 +42,7 @@ public class WriteController extends HttpServlet{
 		}
 		if(result==1) {
 			//정상
-			resp.sendRedirect("list");
+			resp.sendRedirect("list?page=1");
 		}else {
 			//실패
 			resp.sendRedirect("write");

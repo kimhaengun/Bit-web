@@ -32,6 +32,7 @@
 						<th>글쓴이</th>
 						<th>날짜</th>
 					</tr>
+					
 					<%@ page import="java.sql.*,java.util.*" %>
 					<%
 						int limit = 10;
@@ -122,7 +123,9 @@
 								}
 								for(int i =start; i< end; i++){
 							%>
-								<a href="list.jsp?limit=<%=limit %>&page=<%=i+1 %>&key=<%=key %>&word=<%=word %>"><%=i+1 %></a>
+								<a href="list.jsp?limit=<%=limit %>&page=<%=i+1 %>&key=<%=key %>&word=<%=word %>">
+									<%=i+1 %>
+								</a>
 							<%
 								}
 								if(end<maxCount){

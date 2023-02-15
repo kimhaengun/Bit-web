@@ -37,4 +37,21 @@
   	<url-pattern>/community/detail</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>edit</servlet-name>
+  	<servlet-class>com.bit.controller.EditController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>edit</servlet-name>
+  	<url-pattern>/community/edit</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>delete</servlet-name>
+  	<servlet-class>com.bit.controller.DeleteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>delete</servlet-name>
+  	<url-pattern>/community/delete</url-pattern>
+  </servlet-mapping>
 </web-app>

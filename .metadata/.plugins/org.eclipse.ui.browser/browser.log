@@ -15,3 +15,17 @@
 2월 13, 2023 18:00:50.873 [2356:10676:0213/180050.869:ERROR:device_event_log_impl.cc(215)] [18:00:50.868] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
 2월 13, 2023 18:01:48.572 [2356:6500:0213/180148.571:ERROR:util.cc(134)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
 2월 13, 2023 19:10:01.578 [2356:10676:0213/191001.578:ERROR:interface_endpoint_client.cc(695)] Message 5 rejected by interface blink.mojom.WidgetHost
+
+2월 14, 2023 18:15:40.744 NEW SESSION
+2월 14, 2023 18:15:40.744 [11288:8456:0214/181540.743:ERROR:device_event_log_impl.cc(215)] [18:15:40.743] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+2월 14, 2023 18:16:38.596 [11288:4996:0214/181638.596:ERROR:util.cc(134)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+2월 14, 2023 18:24:37.621 [8732:4716:0214/182437.621:ERROR:device_event_log_impl.cc(215)] [18:24:37.621] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+2월 14, 2023 18:25:32.283 [8732:9944:0214/182532.283:ERROR:util.cc(134)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+2월 14, 2023 21:20:52.12 [8732:4716:0214/212052.011:ERROR:interface_endpoint_client.cc(695)] Message 5 rejected by interface blink.mojom.WidgetHost
+2월 14, 2023 21:28:37.272 [8732:11996:0214/212837.272:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+2월 14, 2023 21:55:31.172 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+2월 14, 2023 23:25:32.286 [8732:10972:0214/232532.286:ERROR:util.cc(134)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+
+2월 15, 2023 15:04:56.662 NEW SESSION
+2월 15, 2023 15:04:56.662 [6832:10912:0215/150456.643:ERROR:device_event_log_impl.cc(215)] [15:04:56.643] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+2월 15, 2023 15:05:54.99 [6832:708:0215/150554.099:ERROR:util.cc(134)] Can't create base directory: C:\Program Files\Google\GoogleUpdater

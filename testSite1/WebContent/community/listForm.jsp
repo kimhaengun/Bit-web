@@ -124,7 +124,9 @@
 </style>
 <script type="text/javascript">
 	//$('#contentRight').children().eq(1);
-	$('#cmWriteBtn>a').click()
+	$(function(){
+		//class="active"
+	})
 </script>
 </head>
 <body>
@@ -165,23 +167,25 @@
                     <%
                     	listsize--;
                     	}
-                    %>     
+                    %>         
                     </tbody>
                 </table>
 			</div>
 
             <div class="pagination">
-                <a href="#">&laquo;</a>
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">6</a>
-                <a href="#">7</a>
-                <a href="#">8</a>
-                <a href="#">9</a>
-                <a href="#">10</a>
+            <%
+            	int start = 0+5*((list.get(0).getPageCount()-1)/5);
+            	int end = start+5;
+            	if(end>(list.get(0).getPageCount())){
+            		end=list.get(0).getPageCount();
+            	}
+            	
+            %>
+                <a href="list?page">&laquo;</a>
+            <%	 %>
+            <% for(int i = start; i<end; i++){%>
+                <a href="list?page=<%=i+1 %>" class="active"><%=i+1 %></a>
+            <% }%>
                 <a href="#">&raquo;</a>
                 <div id="cmWriteBtn">
                 	<%if(user.getId()==null || "".equals(user.getId())) {%>

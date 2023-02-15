@@ -9,6 +9,15 @@ public class CommunityDto {
 	private String content; //내용
 	private Date hiredate; //생성 날짜
 	private int counts; //조회수
+	private int pageCount; //총 페이징 수
+	
+	public int getPageCount() {
+		return pageCount;
+	}
+	public void setPageCount(int pageCount) {
+		this.pageCount = pageCount;
+	}
+
 	public int getCommunityNo() {
 		return communityNo;
 	}
@@ -47,7 +56,8 @@ public class CommunityDto {
 	}
 	@Override
 	public String toString() {
-		return "CommunityDao [communityNo=" + communityNo + ", id=" + id + ", title=" + title + ", content=" + content
-				+ ", hiredate=" + hiredate + ", counts=" + counts + "]";
+		return "CommunityDto [communityNo=" + communityNo + ", id=" + id + ", title=" + title + ", content=" + content
+				+ ", hiredate=" + hiredate + ", counts=" + counts + ", pageCount=" + pageCount + "]";
 	}
+	
 }

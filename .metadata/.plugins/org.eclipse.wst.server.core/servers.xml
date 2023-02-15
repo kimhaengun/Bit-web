@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v7.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v7.0 Server at localhost" name="Tomcat v7.0 Server at localhost" runtime-id="Apache Tomcat v7.0" server-type="org.eclipse.jst.server.tomcat.70" server-type-id="org.eclipse.jst.server.tomcat.70" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="16">
-    <list key="modules" value0="day46::org.eclipse.jst.jee.server:day46::jst.web::3.0" value1="day47::org.eclipse.jst.jee.server:day47::jst.web::3.0" value2="testSite1::org.eclipse.jst.jee.server:testSite1::jst.web::3.0" value3="day48::org.eclipse.jst.jee.server:day48::jst.web::3.0"/>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v7.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v7.0 Server at localhost" name="Tomcat v7.0 Server at localhost" runtime-id="Apache Tomcat v7.0" server-type="org.eclipse.jst.server.tomcat.70" server-type-id="org.eclipse.jst.server.tomcat.70" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="19">
+    <list key="modules" value0="day46::org.eclipse.jst.jee.server:day46::jst.web::3.0" value1="day47::org.eclipse.jst.jee.server:day47::jst.web::3.0" value2="testSite1::org.eclipse.jst.jee.server:testSite1::jst.web::3.0" value3="day48::org.eclipse.jst.jee.server:day48::jst.web::3.0" value4="day49::org.eclipse.jst.jee.server:day49::jst.web::3.0"/>
   </server>
 </servers>

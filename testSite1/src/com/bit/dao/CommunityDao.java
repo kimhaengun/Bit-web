@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import com.bit.dto.CommunityDto;
@@ -38,15 +37,30 @@ public class CommunityDao {
 		
 	}
 	//게시글 리스트
-	public List<CommunityDto> listAll() {
+	public List<CommunityDto> listAll(int limit, int offset) {
 		// TODO Auto-generated method stub
-		String sql = "select communityNo, id, title, DATE_FORMAT(hiredate, \"%Y-%m-%d\") as hiredate, counts from community ORDER BY communityNo desc";
+		String sql = "select communityNo, id, title, hiredate, counts from community ORDER BY communityNo desc limit ? offset ?";
+//		System.out.println(limit+", "+ offset);
 		List<CommunityDto> list = null;
 		list = new ArrayList<CommunityDto>();
 		getConnection();
 		try {
-			stmt = conn.createStatement();
-			rs = stmt.executeQuery(sql);
+			//페이지 수 가져오기
+			int pageCount = 0;
+			pstmt = conn.prepareStatement("select CEILING(count(*)/?) as pageCount from community");
+			pstmt.setInt(1, limit);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				pageCount = rs.getInt("pageCount");
+				rs.close();
+				pstmt.close();
+			}
+			
+			//10개씩 가져오기
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, limit);
+			pstmt.setInt(2, offset);
+			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				CommunityDto dto = new CommunityDto();
 				dto.setCommunityNo(rs.getInt("communityNo"));
@@ -54,6 +68,7 @@ public class CommunityDao {
 				dto.setTitle(rs.getString("title"));
 				dto.setHiredate(rs.getDate("hiredate"));
 				dto.setCounts(rs.getInt("counts"));
+				dto.setPageCount(pageCount);
 				System.out.println(dto.toString());
 				list.add(dto);
 			}
@@ -81,7 +96,7 @@ public class CommunityDao {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			pstmt.setString(2, title);
-			pstmt.setNString(3, content);
+			pstmt.setString(3, content);
 			return pstmt.executeUpdate();
 		}finally {
 			try {
@@ -94,6 +109,7 @@ public class CommunityDao {
 		}
 		
 	}
+	//상세보기
 	public CommunityDto selectOne(int no) {
 		// TODO Auto-generated method stub
 		CommunityDto dto = new CommunityDto();
@@ -116,6 +132,7 @@ public class CommunityDao {
 				dto.setContent(rs.getString("content"));
 				dto.setHiredate(rs.getDate("hiredate"));
 				dto.setCounts(rs.getInt("counts"));
+				
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -132,7 +149,34 @@ public class CommunityDao {
 		System.out.println("디테일 Dto : "+dto.toString());
 		return dto;
 	}
-
-	
+	//게시글 수정
+	public int editOne(int communityNo, String title, String content) throws SQLException {
+		// TODO Auto-generated method stub
+		String sql = "update community set title=?, content=? where communityNo=?";
+		getConnection();
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, title);
+			pstmt.setString(2, content);
+			pstmt.setInt(3, communityNo);
+			return pstmt.executeUpdate();
+		}finally {
+			try {
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+				e2.printStackTrace();
+			}
+		}
+	}
+	public int deleteOne(int communityNo) throws SQLException {
+		// TODO Auto-generated method stub
+		String sql = "delete from community where communityNo=?";
+		getConnection();
+		pstmt=conn.prepareStatement(sql);
+		pstmt.setInt(1, communityNo);
+		return pstmt.executeUpdate();
+	}
 	
 }

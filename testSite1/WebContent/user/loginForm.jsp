@@ -40,9 +40,12 @@
 </head>
 <% 
 	String result="";
-	if(("false").equals(request.getParameter("loginResult"))){
-			result="로그인 실패하였습니다.";
+	if("GET".equals(request.getMethod())){		
+		if(("false").equals(request.getParameter("Result"))){
+				result="로그인 실패하였습니다.";
+		}
 	}
+	System.out.println(result);
 %>
 <body>
 	<%@include file="../includes/menu.jsp" %>
