@@ -6,7 +6,7 @@ import javax.servlet.annotation.WebListener;
 
 import org.apache.log4j.Logger;
 
-@WebListener
+//@WebListener
 public class Ex02Listener implements ServletRequestListener {
 	Logger log = Logger.getLogger(this.getClass().getCanonicalName());
 	@Override

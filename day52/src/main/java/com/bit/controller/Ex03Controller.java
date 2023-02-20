@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/download.do")
+//@WebServlet("/download.do")
 public class Ex03Controller extends HttpServlet{
 
 	@Override

@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.log4j.Logger;
 
 // 1. /ex01.do url요청이오면 시작하는 필터
-@WebFilter("/ex01.do")
+//@WebFilter("/ex01.do")
 public class Ex03Filter implements Filter {
 	Logger log = Logger.getLogger(this.getClass().getCanonicalName());
 	@Override
