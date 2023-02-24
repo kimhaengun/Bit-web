@@ -15,9 +15,9 @@ public class DeleteController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("삭제 POST 요청옴");
+//		System.out.println("삭제 POST 요청옴");
 		int communityNo = Integer.parseInt(req.getParameter("communityNo").trim());
-		System.out.println(communityNo);
+//		System.out.println(communityNo);
 		CommunityDao dao = new CommunityDao();
 		try {
 			if(dao.deleteOne(communityNo)==0) {

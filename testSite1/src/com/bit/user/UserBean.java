@@ -30,6 +30,10 @@ public class UserBean {
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
+	@Override
+	public String toString() {
+		return "UserBean [id=" + id + ", pw=" + pw + ", checkPw=" + checkPw + ", nickName=" + nickName + "]";
+	}
 	
 	
 	

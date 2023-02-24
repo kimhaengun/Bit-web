@@ -1,7 +1,0 @@
-package com.bit.emp;
-
-import javax.servlet.http.HttpServlet;
-
-public class AddController extends HttpServlet {
-
-}

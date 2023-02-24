@@ -10,7 +10,22 @@ public class CommunityDto {
 	private Date hiredate; //생성 날짜
 	private int counts; //조회수
 	private int pageCount; //총 페이징 수
+	private int page; // 현재 페이지
+	private char state; //삭제 여부
 	
+	
+	public char getState() {
+		return state;
+	}
+	public void setState(char state) {
+		this.state = state;
+	}
+	public int getPage() {
+		return page;
+	}
+	public void setPage(int page) {
+		this.page = page;
+	}
 	public int getPageCount() {
 		return pageCount;
 	}

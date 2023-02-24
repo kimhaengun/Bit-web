@@ -12,9 +12,9 @@
 		}
 		#header>h1{
 			width: 122px;
-            height: 59px;
+            height: 80px;
             text-indent: -99999px;
-            background-image: url("../imgs/logo2.png");
+            background-image: url("../imgs/logo.jpg");
 		}
 		#header #loginForm{
 			float: right;
@@ -44,7 +44,7 @@
 			overflow: hidden;
 		}
 		#menu>ul{
-			width: 500px;
+			width: 250px;
             margin: 0 auto;
 		}
 		#menu>ul>li{
@@ -53,7 +53,9 @@
 			width: 60px;
 			text-align: center;
 			width: 100px;
+			font-weight: normal;
 		}
+		
 		#menu>ul>li>a{
 			height: 70px;
 			line-height: 70px;
@@ -121,6 +123,7 @@
 			border:2px solid gray;
 			width: 500px;
 			border-radius: 10px;
+			position: relative;
 		}
 		#joinform>div>p, #joinform>div>input+p{
 			
@@ -253,4 +256,449 @@
 	    background-color: #ddd;
 	    border-radius: 5px;
 	    }
+	    #joinform>span{
+	    display:block;
+	    	margin: 10px 0px -10px 10px;
+	    	color: red;
+	    	font-weight: bold;
+	    }
+	    #checkBtn{
+	    	float: right;
+	    	margin-right: 20px;
+	    	margin-top: 22px;
+	    	color: red;
+	    	font-weight: bold;
+	    	
+	    }
+
+	    #checkBtn>a:hover{
+	    	color: blue;
+
+	    }
+	    /*게시판 상세보기*/
+	    	#content_cm{
+		width: 1000px;
+		height: 500px;
+		margin: 10px auto; 
+		border: 2px solid #a9a9a9;
+		border-radius: 10px;
+		padding:10px;
+	}
+	#contentLeft{
+		width:10%;
+		height:100%;
+		border-right: 2px solid #a9a9a9;
+		text-align: center;
+        float: left;
+	}
+	#contentLeft>div{
+        margin-top: 36px;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	#contentRightDetail{
+		width:88%;
+		height:100%;
+        float:right;
+
+	}
+	#contentRightDetail>div:nth-child(1){
+        font-size: 30px;
+		text-align: center;
+	}
+	
+	#contentRightDetail>div:nth-child(2){
+        width: 100%;
+        margin: 0px auto;
+        text-align: left;
+	}
+	#detailFormContent{
+		height: 90%;
+		overflow: auto;
+	}
+
+	#detailtitledom>p{
+		width: 95%;
+		height: 30px;
+		
+		margin-top: 5px;
+		
+		font-size: 40px;
+		font-weight: bold;
+	}
+	#detailcontentdom>textarea{
+		margin-top: 10px;
+		width: 98%;
+		height: 300px;
+		border-radius: 10px;
+		overflow: auto;
+		border: 2px solid #a9a9a9;
+		font-size: 15px;
+		padding: 5px;
+	}
+	#detailInfodom{
+		margin-top:-20px;
+		margin-bottom: -20px;
+	}
+	#detailInfodom>p:nth-child(2){
+		font-weight: bold;
+	}
+	#detailInfodom>p, #detailInfodom>div, #detailInfodom>div>p{
+		display: inline-block;
+	}
+	#detailInfodom>div{
+		margin-left: 10px;
+	}
+	#detailInfodom>div>p{
+		color: gray;
+		font-size: 13px;
+	}
+	#detailfooterdom{
+		margin-top: -5px;
+	}
+	#detailfooterdom>a {
+		margin-left: 10px;
+		text-decoration: none;
+		color: black;
+	}
+	#detailfooterdom>a:nth-child(1):hover {
+		color:red;
+	}
+	#reply{
+		display: inline-block;
+	}
+	#reply:hover {
+		color:blue;
+		font-weight: blod;
+	}
+	#replyWriteForm{
+		width: 100%;
+		margin-bottom: 10px;
+		height: 60px;
+		margin-top: -30px;
+	}
+	#replyWriteForm>input{
+		font-size: 18px;
+	}
+	#replyWriteForm>a{
+		margin-left: 10px;
+	}
+	#replyWriteForm>a:hover{
+		color:blue;
+		font-weight: bold;
+	}
+	#replyListForm>div>div, #replyListForm>div>div>div, #replyFooter{
+		display: inline-block;
+	}
+	#replyListForm>div>div{
+		font-weight: bold;
+	}
+	#replyListForm>div>div>div, #replyFooter{
+		font-size: 13px;
+		color: gray;
+	}
+	#division{
+		float: left;
+		display: inline-block;
+		height: 50px;
+	}
+	#rereply>a{
+		margin-left: 10px;
+	}
+	#rereply>a:hover{
+		color:blue;
+	}
+	#replyDeleteContent{
+		color: gray;
+		font-size: 13px;
+		font-weight: bold;
+	}
+	#contents{
+		margin-top: 30px;
+	}
+	#replyFooter>div:nth-child(1):hover, #replyFooter>div:nth-child(2):hover {
+		color:blue;
+		font-weight: bold;
+	}
+		#replyFooter>div:nth-child(3):hover {
+		color:red;
+		font-weight: bold;
+	}
+	
+}
+/*게시물 목록*/
+	#content_cm{
+		width: 1000px;
+		height: 500px;
+		margin: 10px auto; 
+		border: 2px solid #a9a9a9;
+		border-radius: 10px;
+		padding:10px;
+	}
+	#contentLeft{
+		width:10%;
+		height:100%;
+		border-right: 2px solid #a9a9a9;
+		text-align: center;
+        float: left;
+	}
+	#contentLeft>div{
+        margin-top: 36px;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	#contentRight{
+		width:88%;
+		height:100%;
+        float: right;
+
+	}
+	#contentRight>div:nth-child(1){
+        font-size: 30px;
+		text-align: center;
+        margin-bottom: 10px;
+	}
+	
+	#contentRight>div:nth-child(2){
+        width: 100%;
+        margin: 0px auto;
+	}
+    table{
+        width: 100%;
+        margin: 0px auto;
+        text-align: center;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        border-collapse: collapse;
+        height: 400px;
+    }
+    table>thead{
+    	height: 40px;
+    }
+    table>tbody{
+    	height: 360px;
+    }
+    table>tbody>tr{
+    	height: 36px;
+    }
+    table>thead>tr>td{
+        font-size: 20px;
+        font-weight: bold;
+        background-color: rgb(230,230,250);
+    }
+    table>thead>tr>td:nth-child(1),table>thead>tr>td:nth-child(5){
+        width: 10%;
+    }
+    table>thead>tr>td:nth-child(2){
+        width: 50%;
+    }
+    table>thead>tr>td:nth-child(3){
+        width: 15%;
+    }
+    table>thead>tr>td:nth-child(4){
+        width: 15%;
+    }
+    th, td{
+        height:33px;
+        border-top: 1px solid #f2f2f2;
+    }
+    .pagination {
+        text-align: center;
+        margin-top: 10px;
+        position: relative;
+    }
+
+    .pagination a {
+        display: inline-block;
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+        }
+
+    .pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    }
+
+    .pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+    }
+    #cmWriteBtn{
+    	float: right;
+    	position: absolute;
+    	right: 10px;
+    	top: 2px;
+    	border-radius: 5px;
+    }
+    #cmWriteBtn>a{
+        background-color: #0c1254;
+    	color: white;
+    	font-size: 15px;
+    	height: 20px;
+    	width: 70px;
+    }
+    #cmWriteBtn>a:hover{
+    	background-color: blue;
+    }
+    table>tbody>tr>td:nth-child(2)>a,table>tbody>tr>td:nth-child(3)>a {
+    	text-decoration: none;
+    	color: black;
+	}
+	table>tbody>tr>td:nth-child(2)>a:hover,
+	table>tbody>tr>td:nth-child(3)>a:hover {
+		text-decoration: underline;
+		color: blue;
+	}
+	/*게시글 작성*/
+		
+	#content_cm{
+		width: 1000px;
+		height: 500px;
+		margin: 10px auto; 
+		border: 2px solid #a9a9a9;
+		border-radius: 10px;
+		padding:10px;
+	}
+	#contentLeft{
+		width:10%;
+		height:100%;
+		border-right: 2px solid #a9a9a9;
+		text-align: center;
+        float: left;
+	}
+	#contentLeft>div{
+        margin-top: 36px;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	#contentRight{
+		width:88%;
+		height:100%;
+        float: right;
+        
+
+	}
+	#contentRight>div:nth-child(1){
+        font-size: 30px;
+		text-align: center;
+	}
+	
+	#contentRight>div:nth-child(2){
+        width: 100%;
+        margin: 10px auto;
+        text-align: center;
+	}
+	#cmWriteFormContent{
+		margin-top: 10px;
+	}
+	#cmWriteFormContent>div>button{
+		width: 150px;
+		height: 40px;
+		margin-top: 12px;
+		color: white;
+		background-color: #0c1254;
+		font-size: 20px;
+		border-radius: 10px;
+	}
+	#cmWriteFormContent>div>button:hover{
+		background-color: blue;
+	}
+	#titledom>input{
+		width: 95%;
+		height: 60px;
+		border: 2px solid #a9a9a9;
+		margin-top: 10px;
+		border-radius: 10px;
+		font-size: 20px;
+		font-weight: bold;
+		padding: 10px;
+	}
+	#contentdom>textarea{
+		margin-top: 10px;
+		width: 95%;
+		height: 260px;
+		border-radius: 10px;
+		overflow: auto;
+		border: 2px solid #a9a9a9;
+		font-size: 20px;
+		padding: 10px;
+	}
+
+}
+/*수정*/
+	
+	#content_cm{
+		width: 1000px;
+		height: 500px;
+		margin: 10px auto; 
+		border: 2px solid #a9a9a9;
+		border-radius: 10px;
+		padding:10px;
+	}
+	#contentLeft{
+		width:10%;
+		height:100%;
+		border-right: 2px solid #a9a9a9;
+		text-align: center;
+        float: left;
+	}
+	#contentLeft>div{
+        margin-top: 36px;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	#contentRight{
+		width:88%;
+		height:100%;
+        float: right;
+        
+
+	}
+	#contentRight>div:nth-child(1){
+        font-size: 30px;
+		text-align: center;
+	}
+	
+	#contentRight>div:nth-child(2){
+        width: 100%;
+        margin: 10px auto;
+        text-align: center;
+	}
+	#cmWriteFormContent{
+		margin-top: 10px;
+	}
+	#cmWriteFormContent>div>button{
+		width: 150px;
+		height: 40px;
+		margin-top: 12px;
+		color: white;
+		background-color: #0c1254;
+		font-size: 20px;
+		border-radius: 10px;
+	}
+	#titledom>input{
+		width: 95%;
+		height: 60px;
+		border: 2px solid #a9a9a9;
+		margin-top: 10px;
+		border-radius: 10px;
+		font-size: 20px;
+		font-weight: bold;
+		padding:10px;
+	}
+	#contentdom>textarea{
+		margin-top: 10px;
+		width: 95%;
+		height: 260px;
+		border-radius: 10px;
+		overflow: auto;
+		border: 2px solid #a9a9a9;
+		font-size: 20px;
+		
+		padding: 10px;
+	}
+
+}
 		

@@ -9,6 +9,8 @@
 <title>Insert title here</title>
 	<script type="text/javascript">
 		var form,joinform, id, pw, checkPw, nickName, p;
+		var check=false;
+		var checkname;
 		window.onload=function(){
 			form = document.querySelector('form');
 			joinform = document.querySelector('#joinform');
@@ -17,9 +19,38 @@
 			checkPw = document.querySelector('#checkPw');
 			nickName = document.querySelector('#nickName');
 			
+			//아이디 중복체크
+			$('#checkBtn').click(function(){
+					console.log('클릭');
+						$.ajax({
+							url:'over.do',
+							data:{cmd:$('#id').val()},
+							method:'get',
+							contentType:'text/plain; encoding=UTF-8',
+							dataType:"text",
+						}).done(function(data){
+							//응답
+							if(data==='ok'){
+								//동일 유저가 있음
+								check=false;
+								$('#joinform>span').text("*중복 아이디 입니다.");
+							}else{
+								//동일 유저 없음
+								check=true;
+								checkname=$('#id').val();
+								console.log('check name, ',checkname);
+								$('#joinform>span').text("*사용할 수 있는 아이디 입니다.");
+								//$('#id').prop('readonly',true);
+							}
+						});
+					return false;
+					});
+			
+			
+			//input Validation
 			form.onsubmit=function(){
 				console.log('form 클릭');
-				console.log(document.querySelector('#name'));
+
 				
 				for(ele of form.querySelectorAll('div')) {
 					p = ele.querySelector('p');
@@ -62,13 +93,16 @@
 					nickName.after(p);
 					return false;
 				}
+				if(check==false || id.value!=checkname){
+					alert('아이디 중복 체크를 진행해 주세요');
+					$('#checkBtn').show();
+					return false;
+				}
+			
+			
 				return true;
 			}
-			$('#checkBtn').click(function(){
-					console.log('클릭');
-					$.get()
-				return false;
-			});
+			
 			
 		}
 	</script>
@@ -80,10 +114,16 @@
 	<div id="content">
 		<div id="jointext">회원가입</div>
 		<div id="joinform">
+				<span>*아이디 중복체크는 필수사항입니다.</span>
+
 				<div>
+					<div id="checkBtn">
+						<a >중복체크</a>
+					</div>	
 					<input placeholder="아이디" type="text" name="id" id="id">
-					<button id="checkBtn">중복체크</button>
+
 				</div>
+
 				<div>
 					<input placeholder="비밀번호" type="password" name="pw" id="pw">
 				</div>

@@ -36,10 +36,10 @@ public class EditController extends HttpServlet{
 		CommunityDao dao= new CommunityDao();
 		try {
 			 dao.editOne(communityNo, title, content);
+			 resp.sendRedirect("detail?communityNo="+communityNo);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		resp.sendRedirect("detail?communityNo="+communityNo);
 	}
 }

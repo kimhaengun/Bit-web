@@ -37,9 +37,9 @@ public class CommunityDao {
 		
 	}
 	//게시글 리스트
-	public List<CommunityDto> listAll(int limit, int offset) {
+	public List<CommunityDto> listAll(int limit, int offset,int page) {
 		// TODO Auto-generated method stub
-		String sql = "select communityNo, id, title, hiredate, counts from community ORDER BY communityNo desc limit ? offset ?";
+		String sql = "select communityNo, id, title, hiredate, counts from community where state='T' ORDER BY communityNo desc limit ? offset ?";
 //		System.out.println(limit+", "+ offset);
 		List<CommunityDto> list = null;
 		list = new ArrayList<CommunityDto>();
@@ -69,7 +69,8 @@ public class CommunityDao {
 				dto.setHiredate(rs.getDate("hiredate"));
 				dto.setCounts(rs.getInt("counts"));
 				dto.setPageCount(pageCount);
-				System.out.println(dto.toString());
+				dto.setPage(page);
+//				System.out.println(dto.toString());
 				list.add(dto);
 			}
 		} catch (SQLException e) {
@@ -172,7 +173,7 @@ public class CommunityDao {
 	}
 	public int deleteOne(int communityNo) throws SQLException {
 		// TODO Auto-generated method stub
-		String sql = "delete from community where communityNo=?";
+		String sql = "update community set state='F' where communityNo=?";
 		getConnection();
 		pstmt=conn.prepareStatement(sql);
 		pstmt.setInt(1, communityNo);

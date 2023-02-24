@@ -1,3 +1,4 @@
+<%@page import="com.bit.user.UserBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,12 +14,16 @@
 	%>
 	<jsp:useBean id="user" class="com.bit.user.UserBean" scope="session"></jsp:useBean>
 	<jsp:setProperty property="*" name="user"/>
+	
 	<%@ include file="../../../template/sql.jspf" %>
 	<%
 		String sql = "select id, nickName from user where id='"
 					+user.getId()+"' and password = '"
 					+user.getPw()+"'";
 		System.out.println(sql);
+		HttpSession httpSession = request.getSession();
+		UserBean user2 = (UserBean)httpSession.getAttribute("user");
+		System.out.println(user2.toString());
 		try{
 			conn = getConnection();
 			stmt = conn.createStatement();
@@ -38,8 +43,12 @@
 		}
 		System.out.println(user.getId());
 		if(user.getId()==null || user.getId()==""){
-				response.sendRedirect("../../user/loginForm.jsp?Result=false");							
+			httpSession.invalidate();
+			System.out.println("****"+user2.toString());
+			response.sendRedirect("../../user/loginForm.jsp?Result=false");		
+			
 		}else{
+
 				response.sendRedirect("../../");	
 		}
 		

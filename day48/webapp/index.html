@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+      .header>h1 {
+        width: 205px;
+        height: 42px;
+        background-image: url('imgs/logo.jpg');
+        text-indent: -999px;
+      }
+
+      .menu {
+        background-color: gray;
+        height: 35px;
+      }
+
+      .menu>ul {
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+        width: 400px;
+      }
+
+      .menu>ul>li {
+        float: left;
+        width: 100px;
+      }
+
+      .menu>ul>li>a {
+        display: block;
+        height: 35px;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        line-height: 35px;
+      }
+      
+      .container .content {}
+      .container .content>h2{
+        margin-left: 10%;
+      }
+      .container .content>.box {
+        border-radius: 10px;
+        margin: 10px auto;
+        width: 80%;
+        height: 150px;
+        background-color: cadetblue;
+      }
+
+      .container .content>.box>h2 {
+        color: darkgreen;
+        padding: 50px 0px 0px 100px;
+      }
+
+      .container .content>.box>p {
+        color: darkolivegreen;
+        padding: 10px 0px 0px 80px;
+      }
+      .container .content>.table{
+        width: 80%;
+        margin: 20px auto;
+      }
+      .container .content>.table>div{
+        border: 1px solid gray;
+        border-radius: 10px;
+      }
+      .container .content>.table>div span{
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+        height: 30px;
+      }
+      .container .content>.table>div span:first-child{
+        text-align: right;
+        float: left;
+      }
+      .container .content>.table>div:first-child{
+        background-color: blue;
+        font-weight: bold;
+        text-align: center;
+      }
+      .container .content>.table>div span:first-child+span{
+        margin-left: 10px;
+      }
+      .container .content>.table>div span:last-child{
+        
+        float: right;
+      }
+      .menu>ul>li>a:hover,.menu .active{
+        background-color: gray;
+      }
+      .p3>p{
+        text-align: center;
+      }
+      .btn{
+        display: inline-block;
+        width: 100px;
+        height: 35px;
+        border-right: 2px solid gray;        
+        border-bottom: 2px solid gray;
+        border-radius: 3px;
+        background-color: skyblue;
+        color:white;
+        text-shadow: gray 1px 1px;
+        text-align: center;
+        line-height: 35px;
+        text-decoration: none;
+      }
+      #popup{
+      	width: 100%;
+      	height: 100%;
+      	background-color: rgba(0,0,0,0.5);
+      	position: fixed;
+      	left: 0px;
+      	top: 0px;
+      }
+      #popup>.frame{
+      	width: 400px;
+      	margin: 50px auto;
+      	border:3px solid rgba(255,255,255,0.6);
+      	border-radius: 7px;
+      }
+      #popup>.frame>div{
+      	padding: 2px;
+      }
+      #popup>.frame>div:first-child {
+      	background-color: seagreen;
+      	border-radius: 5px 5px 0px 0px;
+      	text-align: center;
+	  }
+	  #popup>.frame>div:first-child+div {
+      	padding: 50px 20px;
+      	background-color: white;
+      	
+	  }
+	  
+	  #popup>.frame>div:last-child {
+		background-color: seagreen;
+		border-radius: 0px 0px 5px 5px;
+		text-align: right;
+	  }
+      
+      #popup label{
+        display: inline-block;
+        width:45%;
+      }
+      
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript">
+      var bx;
+      $(function () {
+    	$(document).on('click','.p3>p>a',function(e){
+    		$('#popup').show();
+    		return false;
+    	})
+        //상세보기
+        $(document).on('click','.p3>.table a',function(e){
+            e.preventDefault();
+            var deptno = $(this).children().first().html();
+            $.getJSON('http://127.0.0.1:8080/api/dept.json',{deptno:deptno},function(data){
+                console.log(data);
+                $('#popup')
+                    .show()
+                    .find('h2').html('상세페이지')
+                    .end()
+                    .find('.footer>a:first-child').html('수정')
+                    .end()
+                    .find('input')
+                        .eq(0).val(data.dept[0].deptno)
+                        .end()
+                        .eq(1).val(data.dept[0].dname)
+                        .end()
+                        .eq(2).val(data.dept[0].loc)
+                        .end()
+                        .prop('readonly',true);
+
+            });
+
+        });
+        // X 버튼 생성
+        $('<span>X</span>').css({
+                            float:'right',
+                            border:'1px solid gray',
+                            borderRadius:'2px',
+                            display:'block',
+                            width:'20px',
+                            height:'20px',
+                            color:'white',
+                            backgroundColor:'red'})
+                            .prependTo('#popup .header')
+                            .click(function(e){
+                                $('#popup').click();
+                            });
+        $('#popup>div').click(function(e){
+            //hide되는 이벤트 막기
+            e.stopPropagation();
+        });
+        //입력, 닫기 클릭
+        $('#popup .footer>a').click(function(e){
+            //기본 기능 막기
+            e.preventDefault();
+            if($(this).html()=='수정' && $('#popup .header h2').html()=='상세페이지'){
+                //수정 페이지로 변신..
+                $('#popup .header h2').html('수정페이지');
+                $('#popup').find('input').not(":first").removeProp('readonly');
+
+            }else if($(this).html()=='수정'){
+                $('#popup form').submit();
+            }
+            if($(this).html()=='입력'){
+                $('#popup form').submit();
+            }
+            if($(this).html()=='닫기') $('#popup').click();
+        });
+
+        //데이터 추가
+        $('#popup form').submit(function(e){
+            e.preventDefault();
+            //입력
+            if($('#popup').find('h2').html().startsWith('입력')){
+            var url ='http://127.0.0.1:8080/api/add.json';
+            }
+            //수정
+            if($('#popup').find('h2').html().startsWith('수정')){
+                var url ='http://127.0.0.1:8080/api/edit.json';
+            }
+        var param=$(e.target).serialize();
+            console.log(url,param);
+            $.post(url,param,function(data){
+                $('#popup').click();
+                //기존 값에 입력값 추가
+                console.log("아아아아아",data);
+                deptList();
+            });
+        })
+    	$('#popup').hide()
+    			   .click(function(e){
+    				   /*popup창 외부 클릭시 꺼짐*/
+    				   $(this).hide();
+                       $(this)
+                            .find('input')
+                                .val("")
+                                .removeProp('readonly')
+                            .end()
+                            .find('h2').html('입력 페이지')
+                            .end()
+                            .find('a').first().html('입력');
+    			   });
+        $('.container .content').hide();
+        $('.p1').show();
+
+        bx = $('.bx').bxSlider();
+        $('.bx-controls').hide();
+        setInterval(bx.goToNextSlide, 3000);
+
+        $('.menu>ul>li>a')
+        
+          .eq(0).click(function () {
+            $('.menu>ul>li>a').removeClass('active');
+            $('.container .content').hide();
+            $('.p1').show();
+            return false;
+          })
+          .end()
+          .eq(1)
+          .click(function () {
+            $('.menu>ul>li>a').removeClass('active');
+            $(this).addClass('active');
+            $('.container .content').hide();
+            $('.p2').show();
+            return false;
+          })
+          .end()
+          .eq(2)
+          .click(function () {
+            $('.menu>ul>li>a').removeClass('active');
+            $(this).addClass('active');
+            $('.container .content').hide();
+            $('.p3').show();
+            deptList();
+            return false;
+          })
+      });
+      //리스트 페이지
+      function deptList(){
+        $('.container .content>.table>div')
+            .not(".container .content>.table>div:first-child")
+            .remove();
+            $.getJSON('http://127.0.0.1:8080/api/depts.json',function(data){
+                for(obj of data.dept){
+                    var row=$('<div/>');
+                    var link=$('<a href="#"/>');
+                    $('<span/>').html(obj.deptno).appendTo(link);
+                    $('<span/>').html(obj.dname).appendTo(link);
+                    $('<span/>').html(obj.loc).appendTo(link);
+                    row.append(link).appendTo('.content>.table');
+                    
+                }
+            });
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>비트교육센터</h1>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="#" class="active">HOME</a></li>
+          <li><a href="#">INTRO</a></li>
+          <li><a href="#">DEPT</a></li>
+          <li><a href="#">LOGIN</a></li>
+        </ul>
+      </div>
+      <div class="content p1">
+        <div class="bx">
+          <div><img src="imgs/thumb01.jpg" alt="img01" /></div>
+          <div><img src="imgs/thumb02.jpg" alt="img02" /></div>
+          <div><img src="imgs/thumb03.jpg" alt="img03" /></div>
+          <div><img src="imgs/thumb04.jpg" alt="img04" /></div>
+          <div><img src="imgs/thumb05.jpg" alt="img05" /></div>
+          <div><img src="imgs/thumb06.jpg" alt="img06" /></div>
+        </div>
+      </div>
+      <div class="content p2">
+        <div class="box">
+          <h2>intro page</h2>
+          <p>인사말, 오시는 길, 안내 등등</p>
+        </div>
+    </div>
+    <div class="content p3">
+        <h2>Dept List</h2>
+        <div class="table">
+            <div>
+                <span>deptno</span>
+                <span>dname</span>
+                <span>loc</span>
+            </div>
+        </div>
+        <p><a class="btn" href="#">입력</a></p>
+    </div>
+
+      <div class="footer">
+        &copy; by INSEO co.ltd. All Rights Reserved
+      </div>
+    </div>
+    <div id="popup">
+        <div class="frame">
+            <div class="header">
+                <h2>입력페이지</h2>
+            </div>
+            <div class="content">
+                <form>
+                    <div>
+                        <label>deptno</label>
+                        <input name="deptno"/>
+                    </div>
+                    <div>
+                        <label>dnmae</label>
+                        <input name="dname"/>
+                    </div>
+                    <div>
+                        <label>loc</label>
+                        <input name="loc"/>
+                    </div>
+                </form>
+            </div>
+            <div class="footer">
+                <a href="#" class="btn">입력</a>
+                <a href="#" class="btn">닫기</a>
+            </div>
+        </div>
+    </div>
+  </body>
+
+</html>

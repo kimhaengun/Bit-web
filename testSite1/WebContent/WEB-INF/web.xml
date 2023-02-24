@@ -54,4 +54,49 @@
   	<servlet-name>delete</servlet-name>
   	<url-pattern>/community/delete</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>check</servlet-name>
+  	<servlet-class>com.bit.controller.IdCheckController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>check</servlet-name>
+  	<url-pattern>/user/over.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>reply</servlet-name>
+  	<servlet-class>com.bit.controller.ReplyWriteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>reply</servlet-name>
+  	<url-pattern>/community/reply.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>rereply</servlet-name>
+  	<servlet-class>com.bit.controller.ReReplyWriteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>rereply</servlet-name>
+  	<url-pattern>/community/rereply</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>replydelete</servlet-name>
+  	<servlet-class>com.bit.controller.ReplyDeleteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>replydelete</servlet-name>
+  	<url-pattern>/community/replyDelete</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>replyedit</servlet-name>
+  	<servlet-class>com.bit.controller.ReplyEditController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>replyedit</servlet-name>
+  	<url-pattern>/community/replyEdit</url-pattern>
+  </servlet-mapping>
 </web-app>

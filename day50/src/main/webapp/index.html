@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/table.css">
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var p1=$('#p1').html();
+        var p2=$('#p2').html();
+        var p3=$('#p3').html();
+        var p4=$('#p4').html();
+        $("#p1, #p2, #p3, #p4").hide();
+        $('.menu a')
+        .eq(0).click(function(){
+            $('.content').html(p1);
+        })
+        .end()
+        .eq(1).click(function(){
+            $('.content').html(p2);
+        })
+        .end()
+        .eq(2).click(function(){
+            $('.content').html(p3);
+        })
+        .end()
+        .eq(3).click(function(){
+            $('.content').html(p4);
+        })
+        ;
+        $('.menu a').eq(0).click();
+    })
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>비트교육센터</h1>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#index">home</a></li>
+                <li><a href="#intro">intro</a></li>
+                <li><a href="#list">dept</a></li>
+                <li><a href="#login">login</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            
+        </div>
+        <div class="footer">
+            Created by David Marby & Nijiko Yonskai
+            Source
+            Having trouble? Poke @DMarby on Twitter
+            Images from Unsplash
+        </div>
+    </div>
+    <div id="p1">
+        <img src="https://picsum.photos/id/237/200/300">
+    </div>
+    <div id="p2">
+        <h2>intro page</h2>
+    </div>
+    <div id="p3">
+        <h2>list page</h2>
+        <div class="table">
+            <div class="thead">
+                <span>deptno</span>
+                <span>dname</span>
+                <span>loc</span>
+            </div>
+            <div class="tbody">
+
+            </div>
+
+        </div>
+    </div>
+    <div id="p4">
+        <h2>login page</h2>
+    </div>
+</body>
+</html>

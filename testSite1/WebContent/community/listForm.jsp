@@ -10,117 +10,6 @@
 <link href="../css/myProject.css" rel="stylesheet">
 <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
 <style type="text/css">
-	#content_cm{
-		width: 1000px;
-		height: 500px;
-		margin: 10px auto; 
-		border: 2px solid #a9a9a9;
-		border-radius: 10px;
-		padding:10px;
-	}
-	#contentLeft{
-		width:10%;
-		height:100%;
-		border-right: 2px solid #a9a9a9;
-		text-align: center;
-        float: left;
-	}
-	#contentLeft>div{
-        margin-top: 36px;
-		font-size: 20px;
-		font-weight: bold;
-	}
-	#contentRight{
-		width:88%;
-		height:100%;
-        float: right;
-
-	}
-	#contentRight>div:nth-child(1){
-        font-size: 30px;
-		text-align: center;
-        margin-bottom: 10px;
-	}
-	
-	#contentRight>div:nth-child(2){
-        width: 100%;
-        margin: 0px auto;
-	}
-    table{
-        width: 100%;
-        margin: 0px auto;
-        text-align: center;
-        border-top: 2px solid black;
-        border-bottom: 2px solid black;
-        border-collapse: collapse;
-    }
-    table>thead>tr>td{
-        font-size: 20px;
-        font-weight: bold;
-        background-color: rgb(230,230,250);
-    }
-    table>thead>tr>td:nth-child(1),table>thead>tr>td:nth-child(5){
-        width: 10%;
-    }
-    table>thead>tr>td:nth-child(2){
-        width: 50%;
-    }
-    table>thead>tr>td:nth-child(3){
-        width: 15%;
-    }
-    table>thead>tr>td:nth-child(4){
-        width: 15%;
-    }
-    th, td{
-        height:33px;
-        border-top: 1px solid #f2f2f2;
-    }
-    .pagination {
-        text-align: center;
-        margin-top: 10px;
-        position: relative;
-    }
-
-    .pagination a {
-        display: inline-block;
-        color: black;
-        padding: 8px 16px;
-        text-decoration: none;
-        }
-
-    .pagination a.active {
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
-    }
-
-    .pagination a:hover:not(.active) {
-    background-color: #ddd;
-    border-radius: 5px;
-    }
-    #cmWriteBtn{
-    	float: right;
-    	position: absolute;
-    	right: 10px;
-    	top: 2px;
-    	border-radius: 5px;
-    }
-    #cmWriteBtn>a{
-        background-color: #0c1254;
-    	color: white;
-    	font-size: 15px;
-    	height: 20px;
-    	width: 70px;
-    }
-    table>tbody>tr>td:nth-child(2)>a,table>tbody>tr>td:nth-child(3)>a {
-    	text-decoration: none;
-    	color: black;
-	}
-	table>tbody>tr>td:nth-child(2)>a:hover,
-	table>tbody>tr>td:nth-child(3)>a:hover {
-		text-decoration: underline;
-		color: blue;
-	}
 </style>
 <script type="text/javascript">
 	//$('#contentRight').children().eq(1);
@@ -154,6 +43,7 @@
                     	List<CommunityDto> list = null;
                     	list = (List<CommunityDto>)request.getAttribute("communityList");
                     	int listsize = list.size();
+                    	if(list.size()>0){
                     	for(CommunityDto dto : list){
                     		
                     %>
@@ -167,24 +57,48 @@
                     <%
                     	listsize--;
                     	}
-                    %>         
+                    	}else{
+                    %>  
+                       <tr>
+                            <td>현재 데이터가 없습니다.</td>
+                           
+                        </tr>
+                    <%} %>       
                     </tbody>
                 </table>
 			</div>
 
             <div class="pagination">
             <%
-            	int start = 0+5*((list.get(0).getPageCount()-1)/5);
+            	int start=0;
+            	if(list.size()<1){
+            		start=0;
+   					CommunityDto dt = new CommunityDto();
+            		dt.setPageCount(10);
+            		list.add(dt);
+            	}else{
+            		
+            	start = 0+5*((list.get(0).getPageCount()-1)/5);
+            	}
             	int end = start+5;
             	if(end>(list.get(0).getPageCount())){
             		end=list.get(0).getPageCount();
             	}
             	
             %>
-                <a href="list?page">&laquo;</a>
+                <a href="#">&laquo;</a>
             <%	 %>
-            <% for(int i = start; i<end; i++){%>
-                <a href="list?page=<%=i+1 %>" class="active"><%=i+1 %></a>
+            <% 
+            	String select = "";
+
+            	for(int i = start; i<end; i++){
+            		if((i+1)==list.get(0).getPage()){
+            			select="active";
+            		}else{
+            			select="";
+            		}
+            %>
+                <a href="list?page=<%=i+1 %>" class="<%=select%>"><%=i+1 %></a>
             <% }%>
                 <a href="#">&raquo;</a>
                 <div id="cmWriteBtn">
