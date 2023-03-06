@@ -57,6 +57,8 @@ E:\webspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3157763474.ind
 \day34\src
 E:\webspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1928000818.index
 \struts02\src\main\java
+E:\webspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\202598971.index
+\Ex02Controller\src\main\java
 E:\webspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2444684078.index
 \day47\src
 E:\webspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\507528070.index
@@ -89,6 +91,8 @@ E:\webspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\337636732.inde
 \tsetSite1\src
 E:\webspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1010574968.index
 \tsetSite1\src
+E:\webspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1825313292.index
+\sts04\src\main\java
 E:\webspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\163867269.index
 \day52\src\main\java
 E:\webspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2683611675.index
@@ -101,6 +105,8 @@ E:\webspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4238165562.ind
 \struts02\src\main\java
 E:\webspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4149251862.index
 \day51\src\main\java
+E:\webspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\534184618.index
+\sts04\src\main\java
 E:\webspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3983446035.index
 \struts02\src\main\java
 E:\webspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2274273302.index

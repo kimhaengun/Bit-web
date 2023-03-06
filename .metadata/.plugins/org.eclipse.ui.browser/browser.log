@@ -1277,3 +1277,9 @@
 2월 17, 2023 12:43:41.406 [2004:3036:0217/124341.399:ERROR:CONSOLE(6)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/panels/console/console.js (6)
 2월 17, 2023 12:43:41.407 [2004:3036:0217/124341.399:ERROR:CONSOLE(6)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/panels/console/console.js (6)
 2월 17, 2023 14:08:14.584 [2004:11084:0217/140814.584:ERROR:util.cc(134)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+
+3월 06, 2023 11:21:23.907 NEW SESSION
+3월 06, 2023 11:21:23.908 [9728:3340:0306/112123.888:ERROR:interface_endpoint_client.cc(695)] Message 0 rejected by interface blink.mojom.WidgetHost
+3월 06, 2023 12:15:38.318 [9728:4148:0306/121538.318:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+3월 06, 2023 12:42:16.261 [9728:3340:0306/124216.261:ERROR:interface_endpoint_client.cc(695)] Message 0 rejected by interface blink.mojom.WidgetHost
+3월 06, 2023 12:45:06.324 [9728:3340:0306/124506.323:ERROR:interface_endpoint_client.cc(695)] Message 0 rejected by interface blink.mojom.WidgetHost
