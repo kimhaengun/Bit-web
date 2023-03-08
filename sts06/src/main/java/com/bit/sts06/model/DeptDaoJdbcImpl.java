@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import lombok.AllArgsConstructor;
 import lombok.Setter;
 
-@Repository
+//@Repository
 public class DeptDaoJdbcImpl implements DeptDao {
 
 	@Autowired
