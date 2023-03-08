@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+	  </div>
+	</div>
+	<div class="row" id = "footer">
+	  <div class="col-md-12">
+	  	<address>
+		  <strong>HHHHHHHHHHHHHH, Inc.</strong><br>
+		  부솬시 부솬구 부솬동 부솬<br>
+		  BuSan Francisco, CA 94103<br>
+		  <abbr title="Phone">P:</abbr> (123) 456-7890
+		</address>
+	  </div>
+	</div>
+</div>
