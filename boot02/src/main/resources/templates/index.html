@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <h1>template view index file</h1>
+ <table>
+ 	<thead>
+ 		<tr>
+ 			<td>deptno</td>
+ 			<td>dname</td>
+ 			<td>loc</td>
+ 		</tr>
+ 	</thead>
+ 	<tbody>
+ 		<tr th:each="bean:${list}">
+ 			<td><a href="detail.html" th:href="@{/detail(idx=${bean.deptno})}" th:text="${bean.deptno}">100</a></td>
+ 			<td><a href="detail.html" th:href="@{/detail(idx=${bean.deptno})}" th:text="${bean.dname}">test100</a></td>
+ 			<td><a href="detail.html" th:href="@{/detail(idx=${bean.deptno})}" th:text="${bean.loc}">test100</a></td>
+ 		</tr>
+ 	</tbody>
+ </table>
+ <a href="add.html" th:href="@{/add}">입력</a>
+</body>
+</html>
