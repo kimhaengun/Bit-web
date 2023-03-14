@@ -62,7 +62,7 @@ app.get('/intro',function(req,res){
 })
 
 app.get('/dept/',function(req,res){
-    var sql = "select * from dept"
+    let sql = "select * from dept"
     conn.query(sql, function (err, result,felds) {
         if (err) throw err;
         // result.forEach(function(ele,idx){
@@ -76,10 +76,47 @@ app.get('/dept/add',function(req,res){
 })
 app.post('/dept/',function(req,res){
     console.log(req.body);
-    var sql = "insert into dept values (?,?,?)";
+    let sql = "insert into dept values (?,?,?)";
     conn.query(sql,[req.body.deptno, req.body.dname, req.body.loc], function(err,result){
         res.redirect('./');
     });
 })
+
+//detail - get
+app.get('/dept/:deptno',function(req,res){
+    console.log(req.params.deptno);
+    let sql = "select * from dept where deptno=?";
+    conn.query(sql,[req.params.deptno],function(err, result,fields){
+        if(err) return res.render('dept/detial');
+        console.log(result);
+        res.render('dept/detial',{dept:result[0]});
+    })
+    
+})
+
+//detail - post
+app.post('/dept/:deptno',function(req,res){
+    console.log('수정 : ', req.body.deptno, req.body.dname, req.body.loc);
+    let arr = [req.body.dname, req.body.loc, req.body.deptno];
+    let sql = "update dept set dname=?, loc=? where deptno =?";
+    conn.query(sql,arr,function(err,result){
+        if(err) 
+            return res.render('dept/detail',{dept:{deptno:req.body.deptno, dname: req.body.dname, loc:req.body.loc}});
+        if(result.changedRows)
+            res.redirect('./');
+        else
+            return res.render('dept/detail',{dept:{deptno:req.body.deptno, dname: req.body.dname, loc:req.body.loc}});
+    })
+})
+
+app.delete('/dept/:deptno',function(req,res){
+    console.log('삭제 : ',req.params.deptno);
+    let deptno = req.params.deptno;
+    let sql = `delete from dept where deptno =${deptno}`;
+    conn.query(sql,function(){
+        res.status(200).send();
+    })
+});
+
 
 app.listen(PORT);

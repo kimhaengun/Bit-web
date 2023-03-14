@@ -38,27 +38,35 @@
       <div class="container">
         
         <div class="page-header">
-          <h1>List page header <small>Dept List</small></h1>
+          <h1>Detail page header <small>Dept <%=dept.DEPTNO %>Detail</small></h1>
         </div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>deptno</th>
-              <th>dname</th>
-              <th>loc</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% result.forEach(function(ele,idx){%>
-            <tr>
-              <th><a href="<%= ele.DEPTNO%>"><%=ele.DEPTNO%></a></th>
-              <th><a href="<%= ele.DEPTNO%>"><%=ele.DNAME%></a></th>
-              <th><a href="<%= ele.DEPTNO%>"><%=ele.LOC%></a></th>
-            </tr>
-            <%}); %>
-          </tbody>
-        </table>
-        <p><a href="add" class="btn btn-primary btn-block" role="button">입력</a></p>
+
+      <form class="form-signin" action="./<%=dept.DEPTNO%>" method="post">
+        <label for="deptno" class="sr-only">deptno</label>
+        <input type="text" name="deptno" id="deptno" class="form-control" value="<%=dept.DEPTNO %>" required autofocus readonly>
+        <label for="dname" class="sr-only">dname</label>
+        <input type="text" name="dname" id="dname" class="form-control" value="<%=dept.DNAME %>" required readonly>
+        <label for="loc" class="sr-only"></label>
+        <input type="text" name="loc" id="loc" class="form-control" value="<%=dept.LOC %>" required readonly>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">수정</button>
+        <button class="btn btn-lg btn-danger btn-block" type="button">삭제</button>
+      </form>
+      
       </div><!-- /.container -->
+      <script type="text/javascript">
+        $('form .btn-danger').click(function(){
+          $.ajax('<%=dept.DEPTNO%>',{
+            type:'delete'
+          }).done(function(){
+              location.href='./';
+          });
+        });
+
+        $('form').one('submit',function(){
+          $(this).find('input').not(":eq(0)").removeProp('readonly');
+          return false;
+        });
+      </script>
 </body>
 </html>
