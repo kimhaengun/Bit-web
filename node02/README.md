@@ -1,7 +1,7 @@
 ### nodejs & Express & mysql
 
 ### mysql docker setting
-'''
+```
 ### docker volume
 docker volume create dummysql
 
@@ -19,4 +19,4 @@ docker run -it --rm -d -p 3306:3306^
 >alter user 'scott'@'%' identified with mysql_native_password by 'tiger'
 >grant all privileges on *.* to 'scott'@'%'
 >flush privileges
-'''
+```
