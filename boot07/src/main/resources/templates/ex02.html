@@ -6,6 +6,7 @@
 	</head>
 	<body>
 		<div>
+			<h1>ex02 page <span th:text="${session.user}"></span></h1>
 			<input/>
 			<button>전송</button>
 		</div>
@@ -19,7 +20,6 @@
 			// Connection opened
 			socket.addEventListener("open", (event) => {
 			  socket.send("Hello Server!");
-			  console.log("Hello Server!",socket,event);
 			});
 			
 			socket.addEventListener("close", (event) => {
