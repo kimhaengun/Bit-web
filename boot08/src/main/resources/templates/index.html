@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js" integrity="sha512-iKDtgDyTHjAitUDdLljGhenhPwrbBfqTKWO1mkhSFH3A7blITC9MhYon6SjnMhp4o0rADGw9yAC6EW4t5a4K3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	</head>
+	<body>
+		<h1>index</h1>
+		<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+		    enabled. Please enable
+		    Javascript and reload this page!</h2></noscript>
+		<div id="main-content" class="container">
+		    <div class="row">
+		        <div class="col-md-6">
+		            <form class="form-inline">
+		                <div class="form-group">
+		                    <label for="connect">WebSocket connection:</label>
+		                    <button id="connect" class="btn btn-default" type="submit">Connect</button>
+		                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
+		                    </button>
+		                </div>
+		            </form>
+		        </div>
+		        <div class="col-md-6">
+		            <form class="form-inline">
+		                <div class="form-group">
+		                    <label for="name">What is your name?</label>
+		                    <input type="text" id="name" class="form-control" placeholder="Your name here...">
+		                </div>
+		                <button id="send" class="btn btn-default" type="submit">Send</button>
+		            </form>
+		        </div>
+		    </div>
+		    <div class="row">
+		        <div class="col-md-12">
+		            <table id="conversation" class="table table-striped">
+		                <thead>
+		                <tr>
+		                    <th>Greetings</th>
+		                </tr>
+		                </thead>
+		                <tbody id="greetings">
+		                </tbody>
+		            </table>
+		        </div>
+		    </div>
+		</div>
+		<script type="text/javascript">
+			var stompClient = null;
+
+function setConnected(connected) {
+    $("#connect").prop("disabled", connected);
+    $("#disconnect").prop("disabled", !connected);
+    if (connected) {
+        $("#conversation").show();
+    }
+    else {
+        $("#conversation").hide();
+    }
+    $("#greetings").html("");
+}
+
+// <접속> stompClient.connect,   stompClient.subscribe
+function connect() {
+    var socket = new SockJS('/gs-guide-websocket');
+    stompClient = Stomp.over(socket);
+    stompClient.connect({}, function (frame) {
+        setConnected(true);
+        console.log('Connected: ' + frame);
+        
+        // 3. 서버에서 SendTo로 /topic/greetings 주소로 응답을 해주고 
+        //     클라이언트에서 subscribe로 해당 주소에 요청이 오면 showGreeting()함수가 실행되고 메세지 view(Dom)가 생성됨.
+        stompClient.subscribe('/topic/greetings', function (greeting) {
+			console.log("greeting : ",greeting); 
+			//greeting.body 값은 String으로 받아왔기 떄문에 JSON.parse()함수를 통해 String을 JSON으로 변환
+            showGreeting(JSON.parse(greeting.body).content);
+        });
+    });
+}
+
+	// <접속 종료> stompClient.disconnect()
+	function disconnect() {
+	    if (stompClient !== null) {
+	        stompClient.disconnect();
+		    }
+		    setConnected(false);
+		    console.log("Disconnected");
+		}
+	
+	// 1.메세지 전송  --> /app/hello 주소에 메세지를 JSON 데이터를 담아서 서버로 요청
+	// 2. GreetingController
+	// <메세지 전송>  stompClient.send
+	function sendName() {
+	    stompClient.send("/app/hello", {}, JSON.stringify({'name': $("#name").val()}));
+	}
+	
+	// <응답받은 메시지 DOM으로 생성하여 출력> 
+	function showGreeting(message) {
+	    $("#greetings").append("<tr><td>" + message + "</td></tr>");
+	}
+	
+	$(function () {
+	    $("form").on('submit', function (e) {
+	        e.preventDefault();
+	    });
+	    $( "#connect" ).click(function() { connect(); });
+	    $( "#disconnect" ).click(function() { disconnect(); });
+	    $( "#send" ).click(function() { sendName(); });
+	});
+			
+			
+			/*
+			 var sock = new SockJS('/echo');
+			 sock.onopen = function() {
+			     console.log('open');
+			     sock.send('test');
+			 };
+			
+			 sock.onmessage = function(e) {
+			     console.log('message', e);
+			     //sock.close();
+			 };
+			
+			 sock.onclose = function() {
+			     console.log('close');
+			 };
+			*/
+		</script>
+			
+	</body>
+</html>
